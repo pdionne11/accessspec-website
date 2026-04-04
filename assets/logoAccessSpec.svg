@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="93.213585mm"
+   height="24.691757mm"
+   viewBox="0 0 93.213585 24.691757"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   sodipodi:docname="logoAccessSpec.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showguides="true"
+     inkscape:zoom="2.744582"
+     inkscape:cx="268.34687"
+     inkscape:cy="149.5674"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0.05792394,-1.4949737)">
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke-width:0.264583"
+       x="22.937073"
+       y="5.4582086"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="stroke-width:0.264583"
+         x="22.937073"
+         y="5.4582086">ACCESS</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke-width:0.264583"
+       x="30.411362"
+       y="11.92341"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="stroke-width:0.264583"
+         x="30.411362"
+         y="11.92341">SPEC</tspan></text>
+    <path
+       style="fill:#008c00;stroke-width:0.264583"
+       d="M -0.05792294,16.835733 5.8225994,16.932133 9.5822753,2.0862214 V 4.4962723 L 6.4010091,17.414143 -0.05792394,17.221339 Z"
+       id="path4"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       style="fill:#000000;stroke-width:0.264583"
+       d="m -0.05792394,17.221341 6.36253204,0.192804 3.8560809,-14.9423133 2.41005,20.6300353 2.410052,-10.989834 1.349629,7.230153 2.313649,-12.5322639 26.317759,-0.0964 2e-6,0.3856077 L 19.029679,7.2919318 16.330424,21.848639 14.884391,14.329279 12.377938,26.186731 9.9678883,5.171088 6.6902211,18.088959 -0.05791894,17.896155 Z"
+       id="path5"
+       sodipodi:nodetypes="ccccccccccccccccc" />
+    <path
+       style="fill:#008c00;fill-opacity:1;stroke-width:0.264583"
+       d="M 12.377933,22.297249 14.787985,11.05161 14.578417,14.045387 12.482722,24.162288 Z"
+       id="path6"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:#008c00;fill-opacity:1;stroke-width:0.264583"
+       d="m 44.961828,6.7135201 -2e-6,-0.385609 -26.703368,-2e-6 -2.217248,12.1466559 0.289206,1.44603 2.313651,-13.1106759 z"
+       id="path7"
+       sodipodi:nodetypes="ccccccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:2.82222px;font-family:'Calisto MT';-inkscape-font-specification:'Calisto MT';writing-mode:lr-tb;direction:ltr;white-space:pre;inline-size:41.8749;display:inline;fill:#000000;fill-opacity:1;stroke-width:0.264583"
+       x="68.252647"
+       y="18.991203"
+       id="text7"
+       transform="translate(-16.404171,-7.3119318)"><tspan
+         x="68.252647"
+         y="18.991203"
+         id="tspan1">TÉLÉCOMMUNICATIONS inc.</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:1;stroke-width:0.264583"
+       d="m 30.879981,12.883248 16.023757,0.192805 0.47637,3.856082 1.52439,-9.5438015 1.33383,5.4949155 h 42.917331 l -0.0953,0.385608 H 49.857228 l -0.95274,-3.7596797 -1.42912,9.7366067 -1.04801,-5.784123 -15.547386,-0.0964 z"
+       id="path8"
+       sodipodi:nodetypes="ccccccccccccc" />
+    <path
+       style="fill:#008c00;fill-opacity:1;stroke-width:0.264583"
+       d="m 47.364734,17.221341 -0.48201,-4.145288 -16.870359,-0.0964 0.0964,-0.578412 17.063164,0.0964 0.192804,1.638834 1.156825,-6.8445432 -2e-6,2.4100495 z"
+       id="path9"
+       sodipodi:nodetypes="ccccccccc" />
+    <path
+       style="fill:#008c00;fill-opacity:1;stroke-width:0.264583"
+       d="m 93.155649,12.883249 -43.042414,-2e-6 -0.192804,-0.48201 43.235228,-2e-6 z"
+       id="path10"
+       sodipodi:nodetypes="ccccc" />
+  </g>
+</svg>
