@@ -220,7 +220,7 @@ function initContactForm() {
       `NOTE : Je joindrai des photos de l'appareil en réponse à ce courriel.\n\n` +
       `Merci,\n${prenom} ${nom}`
     );
-    window.location.href = `mailto:info@accessspec.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:service@accessspec.com?subject=${subject}&body=${body}`;
   });
 }
 
