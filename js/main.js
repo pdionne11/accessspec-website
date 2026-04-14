@@ -91,12 +91,14 @@ function initRotatingSubtitle() {
     fr: [
       "Réparation de caméras d'inspection de drain",
       "Réparation de caméras robotisées",
-      "Réparation d'équipements de radiodétection"
+      "Réparation d'appareils de radiodétection",
+      "Réparation de corrélateurs"
     ],
     en: [
       "Drain inspection camera repair",
       "Robotic camera repair",
-      "Radio detection equipment repair"
+      "Radio detection equipment repair",
+      "correlator equipment repair"
     ]
   };
 
@@ -252,7 +254,7 @@ const I18N = {
     'nav-contact':  'Obtenir un devis',
     // Hero
     'hero-badge':   'Service partout au Québec',
-    'hero-h1':      "Réparation de caméras d'inspection — Experts au Québec",
+    'hero-h1':      "Réparation de caméras d'inspection<br>de drain, et robotisées<br> — <span class=\"hero-h1-accent\">Service partout au Québec</span>",
     'hero-btn-tel': '📞 Appeler maintenant : 450-581-7009',
     'hero-btn-cta': 'Demander un devis →',
     // Section titles
@@ -280,7 +282,7 @@ const I18N = {
     'nav-faq':      'FAQ',
     'nav-contact':  'Get a Quote',
     'hero-badge':   'Service across all of Québec',
-    'hero-h1':      'Inspection Camera Repair — Québec Experts',
+    'hero-h1':      'Inspection Camera Repair<br> — <span class="hero-h1-accent">Québec Experts</span>',
     'hero-btn-tel': '📞 Call now: 450-581-7009',
     'hero-btn-cta': 'Request a quote →',
     'prob-title':   'Is your equipment having issues?',
@@ -306,7 +308,7 @@ function applyLang(lang) {
   // data-i18n elements
   $$('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
-    if (I18N[lang]?.[key] !== undefined) el.textContent = I18N[lang][key];
+    if (I18N[lang]?.[key] !== undefined) el.innerHTML = I18N[lang][key];
   });
   // href elements keep their href; only text updates via data-i18n
   const btn = $('#lang-btn');

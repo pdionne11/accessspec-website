@@ -248,6 +248,7 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: 24px;
 }
 .hero-content h1 { color: var(--white); text-shadow: 0 2px 20px rgba(0,0,0,.35); margin-bottom: 20px; }
+.hero-h1-accent { color: var(--primary-light); }
 .hero-subtitle {
   font-size: clamp(1rem, 2vw, 1.2rem);
   color: rgba(255,255,255,.88);

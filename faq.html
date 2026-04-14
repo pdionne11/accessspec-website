@@ -19,7 +19,14 @@
       cursor: pointer; transition: all var(--transition-fast);
     }
     .faq-cat-btn:hover, .faq-cat-btn.active { background: var(--primary); color: var(--white); border-color: var(--primary); }
-    .faq-section-label { font-size: .8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--primary); margin: 32px 0 12px; }
+    .faq-section-label {
+      font-size: .8125rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1px; color: var(--primary); margin: 32px 0 12px;
+      scroll-margin-top: 155px; /* desktop : logo (~90px) + nav (~48px) + marge */
+    }
+    @media (max-width: 768px) {
+      .faq-section-label { scroll-margin-top: 85px; } /* mobile : logo seul (~75px) + marge */
+    }
   </style>
 </head>
 <body>
@@ -60,7 +67,7 @@
         <span>FAQ</span>
       </nav>
       <h1>Questions fréquentes</h1>
-      <p>Toutes les réponses à vos questions sur la réparation de caméras d'inspection de drain et localisateurs au Québec.</p>
+      <p>Toutes les réponses à vos questions sur la réparation de caméras d'inspection de drain, robotisées et localisateurs au Québec.</p>
     </div>
   </section>
 
@@ -73,7 +80,7 @@
       <div class="faq-list" role="list">
 
         <!-- DÉLAIS -->
-        <p class="faq-section-label">⏱ Délais &amp; rapidité</p>
+        <p class="faq-section-label" id="delais">⏱ Délais &amp; rapidité</p>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false">
@@ -130,7 +137,7 @@
         </div>
 
         <!-- COÛTS -->
-        <p class="faq-section-label">💰 Coûts &amp; estimé</p>
+        <p class="faq-section-label" id="couts">💰 Coûts &amp; estimé</p>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false">
@@ -160,7 +167,7 @@
         </div>
 
         <!-- GARANTIE -->
-        <p class="faq-section-label">🛡 Garantie</p>
+        <p class="faq-section-label" id="garantie">🛡 Garantie</p>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false">
@@ -176,7 +183,7 @@
         </div>
 
         <!-- MARQUES -->
-        <p class="faq-section-label">🏷 Marques &amp; appareils</p>
+        <p class="faq-section-label" id="marques">🏷 Marques &amp; appareils</p>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false">
@@ -256,7 +263,7 @@
         </div>
 
         <!-- LOCATION -->
-        <p class="faq-section-label">📹 Location d'appareils</p>
+        <p class="faq-section-label" id="location">📹 Location d'appareils</p>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false">
@@ -316,11 +323,11 @@
       <div class="footer-col">
         <h4>Réponses rapides</h4>
         <ul>
-          <li><a href="faq.html">Délais de réparation</a></li>
-          <li><a href="faq.html">Coût vs appareil neuf</a></li>
-          <li><a href="faq.html">Marques supportées</a></li>
-          <li><a href="faq.html">Garantie</a></li>
-          <li><a href="faq.html">Location d'appareils</a></li>
+          <li><a href="faq.html#delais">Délais de réparation</a></li>
+          <li><a href="faq.html#couts">Coût vs appareil neuf</a></li>
+          <li><a href="faq.html#marques">Marques supportées</a></li>
+          <li><a href="faq.html#garantie">Garantie</a></li>
+          <li><a href="faq.html#location">Location d'appareils</a></li>
         </ul>
       </div>
       <div class="footer-col">
