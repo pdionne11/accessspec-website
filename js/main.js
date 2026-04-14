@@ -192,6 +192,16 @@ function initContactForm() {
   const form = $('#contact-form');
   if (!form) return;
 
+  // Pré-cocher selon le paramètre URL (?type=estimation ou ?type=reparabilite)
+  const urlType = new URLSearchParams(window.location.search).get('type');
+  if (urlType === 'estimation') {
+    const radio = form.querySelector('#type-estimation');
+    if (radio) radio.checked = true;
+  } else {
+    const radio = form.querySelector('#type-reparabilite');
+    if (radio) radio.checked = true;
+  }
+
   form.addEventListener('submit', e => {
     e.preventDefault();
     const v  = name => (form.querySelector(`[name="${name}"]`)?.value || '').trim();
@@ -204,9 +214,15 @@ function initContactForm() {
     const marque    = v('marque');
     const desc      = v('description');
 
-    const subject = encodeURIComponent(`Demande de réparation — ${type} ${marque}`);
+    const typeDemande = form.querySelector('[name="type_demande"]:checked')?.value || 'reparabilite';
+    const typeLabel   = typeDemande === 'estimation'
+      ? 'Estimation officielle du coût'
+      : 'Évaluation de réparabilité';
+
+    const subject = encodeURIComponent(`[${typeLabel}] ${type} ${marque}`);
     const body    = encodeURIComponent(
-      `Bonjour,\n\nJe souhaite obtenir un devis pour la réparation de mon équipement.\n\n` +
+      `Bonjour,\n\n` +
+      `Type de demande : ${typeLabel}\n\n` +
       `─── COORDONNÉES ───\n` +
       `Nom : ${prenom} ${nom}\n` +
       `Entreprise : ${entreprise}\n` +
@@ -217,10 +233,10 @@ function initContactForm() {
       `Marque : ${marque}\n\n` +
       `─── DESCRIPTION ───\n` +
       `${desc}\n\n` +
-      `NOTE : Je joindrai des photos de l'appareil en réponse à ce courriel.\n\n` +
+      `NOTE : Veuillez ajouter vos photos dans ce courriel.\n\n` +
       `Merci,\n${prenom} ${nom}`
     );
-    window.location.href = `mailto:service@accessspec.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@accessspec.com?subject=${subject}&body=${body}`;
   });
 }
 

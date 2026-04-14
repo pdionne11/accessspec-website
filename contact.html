@@ -3,13 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact &amp; Devis — Access Spec Telecommunications | Réparation caméra Québec</title>
-  <meta name="description" content="Contactez Access Spec pour un devis de réparation de caméra d'inspection de drain, caméra robotisée ou localisateur. Formulaire de contact, téléphone 450-581-7009, courriel service@accessspec.com.">
+  <title>Contact &amp; estimé — Access Spec Telecommunications | Réparation caméra Québec</title>
+  <meta name="description" content="Contactez Access Spec pour un estimé de réparation de caméra d'inspection de drain, caméra robotisée ou localisateur. Formulaire de contact, téléphone 450-581-7009, courriel info@accessspec.com.">
   <link rel="canonical" href="https://www.accessspec.com/contact.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* === SÉLECTEUR TYPE DE DEMANDE === */
+    .selector-label { font-weight: 600; font-size: .9375rem; margin-bottom: 12px; color: var(--secondary); }
+    .type-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+    @media (max-width: 580px) { .type-options { grid-template-columns: 1fr; } }
+    .type-option {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 16px; border: 2px solid var(--border); border-radius: var(--radius);
+      cursor: pointer; transition: border-color var(--transition-fast), background var(--transition-fast);
+      background: var(--white);
+    }
+    .type-option:hover { border-color: var(--primary-light); background: var(--off-white); }
+    .type-option:has(input:checked) { border-color: var(--primary); background: rgba(15,118,110,.05); }
+    .type-option input[type="radio"] { margin-top: 3px; accent-color: var(--primary); width: 18px; height: 18px; flex-shrink: 0; }
+    .type-option-content { flex: 1; }
+    .type-option-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
+    .type-option-title { font-weight: 600; font-size: .9375rem; color: var(--secondary); }
+    .type-badge { font-size: .75rem; font-weight: 700; padding: 2px 10px; border-radius: var(--radius-full); white-space: nowrap; }
+    .type-badge-free { background: #DCFCE7; color: #166534; }
+    .type-badge-paid { background: #FEF3C7; color: #92400E; }
+    .type-option-desc { font-size: .875rem; color: var(--text-light); margin: 0; }
+    .type-option-note { font-size: .8125rem; color: var(--text-light); font-style: italic; margin: 4px 0 0; }
+  </style>
 </head>
 <body>
 
@@ -32,7 +55,7 @@
         <li><a href="marques.html"   class="nav-link" data-i18n="nav-marques">Marques</a></li>
         <li><a href="procedure.html" class="nav-link" data-i18n="nav-proc">Procédure</a></li>
         <li><a href="faq.html"       class="nav-link" data-i18n="nav-faq">FAQ</a></li>
-        <li><a href="contact.html"   class="nav-link cta-nav" data-i18n="nav-contact">Obtenir un devis</a></li>
+        <li><a href="contact.html"   class="nav-link cta-nav" data-i18n="nav-contact">Obtenir un estimé</a></li>
         <li><button class="lang-btn" id="lang-btn" aria-label="Switch to English">EN</button></li>
       </ul>
     </div>
@@ -48,8 +71,8 @@
         <span aria-hidden="true">›</span>
         <span>Contact</span>
       </nav>
-      <h1>Contactez-nous pour un devis</h1>
-      <p>Décrivez votre équipement et le problème — nous vous répondons rapidement avec une estimation gratuite.</p>
+      <h1>Contactez-nous</h1>
+      <p>Choisissez votre type de demande, décrivez votre appareil — nous vous répondons rapidement.</p>
     </div>
   </section>
 
@@ -62,14 +85,42 @@
 
         <!-- FORMULAIRE -->
         <div class="contact-form fade-in">
-          <h2>Demande de réparation</h2>
+          <h2>Demande de service</h2>
           <p class="form-subtitle">Remplissez le formulaire ci-dessous. Votre application de courriel s'ouvrira avec toutes les informations préremplies.</p>
 
           <div class="form-note" role="note">
-            📎 <strong>lors de l'envoie du couriel</strong>, Ajoutez vos photos de l'équipement. Les photos aident grandement notre diagnostic initial.
+            📎 <strong>lors de l'envoie du couriel</strong>, Ajoutez vos photos de l'appareil. Les photos aident grandement notre diagnostic initial.
           </div>
 
           <form id="contact-form" novalidate>
+
+            <p class="selector-label">Type de demande <span aria-hidden="true" style="color:var(--cta-phone)">*</span></p>
+            <div class="type-options" role="radiogroup" aria-label="Type de demande">
+
+              <label class="type-option" for="type-reparabilite">
+                <input type="radio" id="type-reparabilite" name="type_demande" value="reparabilite" checked>
+                <div class="type-option-content">
+                  <div class="type-option-header">
+                    <span class="type-option-title">Évaluation de réparabilité</span>
+                    <span class="type-badge type-badge-free">Gratuit</span>
+                  </div>
+                  <p class="type-option-desc">Je veux savoir si mon appareil peut être réparé avant de m'engager.</p>
+                </div>
+              </label>
+
+              <label class="type-option" for="type-estimation">
+                <input type="radio" id="type-estimation" name="type_demande" value="estimation">
+                <div class="type-option-content">
+                  <div class="type-option-header">
+                    <span class="type-option-title">Estimation officielle du coût</span>
+                    <span class="type-badge type-badge-paid">Payant</span>
+                  </div>
+                  <p class="type-option-desc">J'ai besoin d'un estimé formel et documenté (assurances, dossier, etc.).</p>
+                  <p class="type-option-note">Nous contacter pour les tarifs.</p>
+                </div>
+              </label>
+
+            </div>
 
             <div class="form-row">
               <div class="form-group">
@@ -109,7 +160,7 @@
                   <option value="Câble / Poussoir">Câble / Poussoir</option>
                   <option value="Moniteur / Écran">Moniteur / Écran</option>
                   <option value="Enrouleur / Dévidoir">Enrouleur / Dévidoir</option>
-                  <option value="Autre équipement">Autre équipement</option>
+                  <option value="Autre appareil">Autre appareil</option>
                 </select>
               </div>
               <div class="form-group">
@@ -136,12 +187,12 @@
                 placeholder="Décrivez le problème observé : symptômes, depuis quand, circonstances de la panne, numéro de modèle si connu..."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;" aria-label="Envoyer la demande de réparation par courriel">
-              📧 Envoyer la demande de réparation
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;" aria-label="Envoyer la demande par courriel">
+              📧 Envoyer la demande
             </button>
 
             <p style="color:var(--text-light); font-size:.8125rem; text-align:center; margin-top:12px;">
-              Votre application de messagerie s'ouvrira avec le message prérempli adressé à service@accessspec.com. Ajoutez vos photos et envoyez.
+              Votre application de messagerie s'ouvrira avec le message prérempli adressé à info@accessspec.com. A ce moment, Ajoutez vos photos et envoyez.
             </p>
 
           </form>
@@ -163,7 +214,7 @@
               <span class="ci-icon" aria-hidden="true">✉️</span>
               <div class="ci-text">
                 <strong>Courriel</strong>
-                <a href="mailto:service@accessspec.com">service@accessspec.com</a>
+                <a href="mailto:info@accessspec.com">info@accessspec.com</a>
               </div>
             </div>
             <div class="ci-item">
@@ -259,14 +310,14 @@
           <li><a href="services.html">Caméras robotisées</a></li>
           <li><a href="services.html">Localisateurs</a></li>
           <li><a href="services.html">Câbles &amp; poussoirs</a></li>
-          <li><a href="procedure.html">Location d'équipements</a></li>
+          <li><a href="procedure.html">Location d'appareils</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact direct</h4>
         <ul>
           <li><a href="tel:4505817009">450-581-7009</a></li>
-          <li><a href="mailto:service@accessspec.com">service@accessspec.com</a></li>
+          <li><a href="mailto:info@accessspec.com">info@accessspec.com</a></li>
           <li><a href="sitemap.xml">Plan du site</a></li>
         </ul>
       </div>
