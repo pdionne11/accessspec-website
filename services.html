@@ -10,6 +10,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .service-detail { scroll-margin-top: 155px; }
+    @media (max-width: 768px) { .service-detail { scroll-margin-top: 85px; } }
+  </style>
 </head>
 <body>
 
@@ -89,7 +93,7 @@
       </article>
 
       <!-- Caméras robotisées -->
-      <article class="service-detail fade-in">
+      <article class="service-detail fade-in" id="cameras-robotisees">
         <div class="svc-detail-head">
           <div class="svc-detail-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -119,7 +123,7 @@
       </article>
 
       <!-- Localisateurs -->
-      <article class="service-detail fade-in">
+      <article class="service-detail fade-in" id="localisateurs">
         <div class="svc-detail-head">
           <div class="svc-detail-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -147,7 +151,7 @@
       </article>
 
       <!-- Moniteurs -->
-      <article class="service-detail fade-in">
+      <article class="service-detail fade-in" id="moniteurs">
         <div class="svc-detail-head">
           <div class="svc-detail-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -172,7 +176,7 @@
       </article>
 
       <!-- Enrouleurs -->
-      <article class="service-detail fade-in">
+      <article class="service-detail fade-in" id="enrouleurs">
         <div class="svc-detail-head">
           <div class="svc-detail-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -199,7 +203,7 @@
       </article>
 
       <!-- Électronique connexe -->
-      <article class="service-detail fade-in">
+      <article class="service-detail fade-in" id="electronique">
         <div class="svc-detail-head">
           <div class="svc-detail-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -299,10 +303,12 @@
         <h4>Services</h4>
         <ul>
           <li><a href="services.html">Caméras d'inspection</a></li>
-          <li><a href="services.html">Caméras robotisées</a></li>
-          <li><a href="services.html">corrélateurs</a></li>
-          <li><a href="services.html">Câbles &amp; poussoirs</a></li>
-          <li><a href="services.html">Moniteurs &amp; enrouleurs</a></li>
+          <li><a href="services.html#cameras-robotisees">Caméras robotisées</a></li>
+          <li><a href="services.html#localisateurs">Localisateurs radiodétection</a></li>
+          <li><a href="services.html#moniteurs">Moniteurs & écrans</a></li>
+          <li><a href="services.html#enrouleurs">Enrouleurs & dévidoirs</a></li>
+          <li><a href="services.html#electronique">Électronique & accessoires connexes</a></li>
+          <li><a href="procedure.html#location">Location d'équipements</a></li>
         </ul>
       </div>
       <div class="footer-col">
