@@ -62,23 +62,21 @@
   <section class="page-hero">
     <div class="page-hero-content container">
       <nav class="breadcrumb" aria-label="Fil d'Ariane">
-        <a href="index.html">Accueil</a>
+        <a href="index.html" data-i18n="nav-accueil">Accueil</a>
         <span aria-hidden="true">›</span>
-        <span>Procédure</span>
+        <span data-i18n="nav-proc">Procédure</span>
       </nav>
-      <h1>Comment envoyer votre équipement pour réparation</h1>
-      <p>Un processus simple et transparent, de votre premier appel au retour de votre équipement réparé.</p>
+      <h1 data-i18n="proc-page-h1">Comment envoyer votre équipement pour réparation</h1>
+      <p data-i18n="proc-page-sub">Un processus simple et transparent, de votre premier appel au retour de votre équipement réparé.</p>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════════════
-       6 ÉTAPES
-  ══════════════════════════════════════════════════════════════ -->
+  <!-- 6 ÉTAPES -->
   <section class="section">
     <div class="container">
       <div class="section-title fade-in">
-        <h2>Les 6 étapes de réparation</h2>
-        <p>Suivez ce processus pour une expérience fluide et sans surprise.</p>
+        <h2 data-i18n="proc-steps-h2">Les 6 étapes de réparation</h2>
+        <p data-i18n="proc-steps-sub">Suivez ce processus pour une expérience fluide et sans surprise.</p>
         <span class="accent-bar"></span>
       </div>
 
@@ -87,13 +85,13 @@
         <div class="proc-step fade-in">
           <div class="step-num" aria-hidden="true">1</div>
           <div class="step-content">
-            <h3>📞 Appelez-nous ou envoyez un courriel</h3>
-            <p>Contactez-nous au <a href="tel:4505817009" style="color:var(--primary)">450-581-7009</a> ou à <a href="mailto:service@accessspec.com" style="color:var(--primary)">service@accessspec.com</a> pour nous décrire le problème. Ayez en main :</p>
+            <h3 data-i18n="proc-s1-h3">📞 Appelez-nous ou envoyez un courriel</h3>
+            <p data-i18n="proc-s1-p">Contactez-nous au <a href="tel:4505817009" style="color:var(--primary)">450-581-7009</a> ou à <a href="mailto:service@accessspec.com" style="color:var(--primary)">service@accessspec.com</a> pour nous décrire le problème. Ayez en main :</p>
             <ul>
-              <li>La marque et le modèle de l'équipement</li>
-              <li>Une description précise du problème observé</li>
-              <li>Des photos si possible (aidez-nous à évaluer)</li>
-              <li>Le niveau d'urgence souhaité (standard ou urgence)</li>
+              <li data-i18n="proc-s1-l1">La marque et le modèle de l'équipement</li>
+              <li data-i18n="proc-s1-l2">Une description précise du problème observé</li>
+              <li data-i18n="proc-s1-l3">Des photos si possible (aidez-nous à évaluer)</li>
+              <li data-i18n="proc-s1-l4">Le niveau d'urgence souhaité (standard ou urgence)</li>
             </ul>
           </div>
         </div>
@@ -101,28 +99,29 @@
         <div class="proc-step fade-in">
           <div class="step-num" aria-hidden="true">2</div>
           <div class="step-content">
-            <h3>✅ Validation de la réparabilité</h3>
-            <p>Nous confirmons rapidement que nous pouvons réparer votre équipement et vous donnons une estimation préliminaire des délais et coûts. Si l'équipement semble irréparable, nous vous le signalons dès cette étape pour vous éviter des frais inutiles de transport.</p>
+            <h3 data-i18n="proc-s2-h3">✅ Validation de la réparabilité</h3>
+            <p data-i18n="proc-s2-p">Nous confirmons rapidement que nous pouvons réparer votre équipement et vous donnons une estimation préliminaire des délais et coûts. Si l'équipement semble irréparable, nous vous le signalons dès cette étape pour vous éviter des frais inutiles de transport.</p>
           </div>
         </div>
 
         <div class="proc-step fade-in">
           <div class="step-num" aria-hidden="true">3</div>
           <div class="step-content">
-            <h3>📦 Emballage et envoi</h3>
-            <p>apportez votre appareil directement ou livrez-le à notre atelier. Incluez dans le colis :</p>
+            <h3 data-i18n="proc-s3-h3">📦 Emballage et envoi</h3>
+            <p data-i18n="proc-s3-p">apportez votre appareil directement ou livrez-le à notre atelier. Incluez dans le colis :</p>
             <ul>
-              <li>Vos coordonnées complètes (nom, téléphone, courriel)</li>
-              <li>Une description écrite du problème</li>
-              <li>Tous les accessoires nécessaires au diagnostic (câbles, adaptateurs)</li>
+              <li data-i18n="proc-s3-l1">Vos coordonnées complètes (nom, téléphone, courriel)</li>
+              <li data-i18n="proc-s3-l2">Une description écrite du problème</li>
+              <li data-i18n="proc-s3-l3">Tous les accessoires nécessaires au diagnostic (câbles, adaptateurs)</li>
               <li>
-                <a href="#conseils-envoie" style="
+                <a href="#conseils-emballage" style="
                   display: inline-flex; align-items: center; gap: 6px;
                   color: var(--white); background: var(--primary);
                   padding: 6px 14px; border-radius: var(--radius-full);
                   font-weight: 600; font-size: .875rem;
                   text-decoration: none; transition: background .15s ease;
-                " onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'">
+                " onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'"
+                  data-i18n="proc-s3-btn">
                   📦 Voir les conseils d'emballage ↓
                 </a>
               </li>
@@ -133,29 +132,29 @@
         <div class="proc-step fade-in">
           <div class="step-num" aria-hidden="true">4</div>
           <div class="step-content">
-            <h3>🔍 Diagnostic complet</h3>
-            <p>À la réception de votre appareil, nos techniciens effectuent un diagnostic approfondi. Vous recevez un rapport détaillé par courriel ou téléphone comprenant :</p>
+            <h3 data-i18n="proc-s4-h3">🔍 Diagnostic complet</h3>
+            <p data-i18n="proc-s4-p1">À la réception de votre appareil, nos techniciens effectuent un diagnostic approfondi. Vous recevez un rapport détaillé par courriel ou téléphone comprenant :</p>
             <ul>
-              <li>La liste complète des problèmes identifiés</li>
-              <li>Les pièces de remplacement nécessaires</li>
-              <li>Le coût total de la réparation (main-d'œuvre + pièces)</li>
-              <li>Les délais de réparation estimés</li>
+              <li data-i18n="proc-s4-l1">La liste complète des problèmes identifiés</li>
+              <li data-i18n="proc-s4-l2">Les pièces de remplacement nécessaires</li>
+              <li data-i18n="proc-s4-l3">Le coût total de la réparation (main-d'œuvre + pièces)</li>
+              <li data-i18n="proc-s4-l4">Les délais de réparation estimés</li>
             </ul>
-            <p>Votre approbation est requise avant de procéder à toute réparation.</p>
+            <p data-i18n="proc-s4-p2">Votre approbation est requise avant de procéder à toute réparation.</p>
           </div>
         </div>
 
         <div class="proc-step fade-in">
           <div class="step-num" aria-hidden="true">5</div>
           <div class="step-content">
-            <h3>🔧 Réparation avec garantie</h3>
-            <p>Après votre approbation, nos techniciens certifiés effectuent la réparation avec des pièces neuve. Chaque réparation comprend :</p>
+            <h3 data-i18n="proc-s5-h3">🔧 Réparation avec garantie</h3>
+            <p data-i18n="proc-s5-p">Après votre approbation, nos techniciens certifiés effectuent la réparation avec des pièces neuves. Chaque réparation comprend :</p>
             <ul>
-              <li>Remplacement des pièces défectueuses par des pièces neuves</li>
-              <li>Tests complets de fonctionnement en conditions réelles</li>
-              <li>Nettoyage et vérification générale de l'équipement</li>
-              <li>Rapport de réparation écrit</li>
-              <li>Garantie sur les travaux effectués</li>
+              <li data-i18n="proc-s5-l1">Remplacement des pièces défectueuses par des pièces neuves</li>
+              <li data-i18n="proc-s5-l2">Tests complets de fonctionnement en conditions réelles</li>
+              <li data-i18n="proc-s5-l3">Nettoyage et vérification générale de l'équipement</li>
+              <li data-i18n="proc-s5-l4">Rapport de réparation écrit</li>
+              <li data-i18n="proc-s5-l5">Garantie sur les travaux effectués</li>
             </ul>
           </div>
         </div>
@@ -163,8 +162,8 @@
         <div class="proc-step fade-in">
           <div class="step-num" aria-hidden="true">6</div>
           <div class="step-content">
-            <h3>🚚 Retour de votre équipement</h3>
-            <p>Une fois la réparation terminée et les tests validés, vous pouvez récupérer votre appareil ou nous le livrons par le transporteur de votre choix (a vos frais).</p>
+            <h3 data-i18n="proc-s6-h3">🚚 Retour de votre équipement</h3>
+            <p data-i18n="proc-s6-p">Une fois la réparation terminée et les tests validés, vous pouvez récupérer votre appareil ou nous le livrons par le transporteur de votre choix (a vos frais).</p>
           </div>
         </div>
 
@@ -174,10 +173,10 @@
       <div class="packaging-tips fade-in" id="conseils-envoie" style="background: #FEF3C7; border-left: 4px solid var(--cta-urgent); margin-top: 40px;">
         <h3 style="color: #92400E;">
           <span aria-hidden="true">💡</span>
-          Conseil : préparez l'étiquette de retour dès l'envoi
+          <span data-i18n="proc-tip-h3">Conseil : préparez l'étiquette de retour dès l'envoi</span>
         </h3>
-        <p style="color: #78350F; font-size: .9375rem; line-height: 1.6;">
-          Lors de votre dépôt chez <a href="https://www.purolator.com/fr/expedition/planifier-et-g%C3%A9rer-une-cueillette" target="_blank" rel="noopener" class="link-external" style="color:#92400E;">Purolator</a>, ou autre livreur demandez au comptoir de préparer <strong>une étiquette de retour prépayée à notre adresse</strong> en même temps que votre envoi. Conservez-la précieusement : dès que la réparation est terminée, nous n'avons qu'à apposer l'étiquette pour expédier immédiatement votre appareil évitamt un délai d'attente.
+        <p style="color: #78350F; font-size: .9375rem; line-height: 1.6;" data-i18n="proc-tip-p">
+          Lors de votre dépôt chez <a href="https://www.purolator.com/fr/expedition/planifier-et-g%C3%A9rer-une-cueillette" target="_blank" rel="noopener" class="link-external" style="color:#92400E;">Purolator</a>, ou autre livreur demandez au comptoir de préparer <strong>une étiquette de retour prépayée à notre adresse</strong> en même temps que votre envoi. Conservez-la précieusement : dès que la réparation est terminée, nous n'avons qu'à apposer l'étiquette pour expédier immédiatement votre appareil évitant un délai d'attente.
         </p>
       </div>
 
@@ -185,28 +184,28 @@
       <div class="packaging-tips fade-in" id="conseils-emballage">
         <h3>
           <span aria-hidden="true">📦</span>
-          Conseils d'emballage pour éviter les dommages en transit
+          <span data-i18n="proc-pack-h3">Conseils d'emballage pour éviter les dommages en transit</span>
         </h3>
         <ul>
-          <li><span aria-hidden="true">📦</span> Utilisez une boîte de carton rigide, suffisamment grande pour ajouter du rembourrage de tous côtés.</li>
-          <li><span aria-hidden="true">📦</span> Enveloppez chaque composant individuellement dans du papier bulle (au moins 5 cm de protection).</li>
-          <li><span aria-hidden="true">📦</span> Évitez d'enrouler les câbles trop serrés — utilisez des courbes larges pour ne pas fracturer les fils internes.</li>
-          <li><span aria-hidden="true">📦</span> Sécurisez la tête de caméra dans une pochette rigide ou un étui de protection séparé.</li>
-          <li><span aria-hidden="true">📦</span> Remplissez les espaces vides avec du papier froissé ou des flocons de polystyrène.</li>
-          <li><span aria-hidden="true">📦</span> Scellez la boîte avec du ruban adhésif résistant (minimum 3 couches sur toutes les coutures).</li>
-          <li><span aria-hidden="true">📦</span> Apposez clairement nos coordonnées et l'étiquette de livraison sur toutes les faces principales.</li>
-          <li><span aria-hidden="true">📦</span> Conservez votre numéro de suivi de livraison jusqu'à confirmation de réception de notre part.</li>
+          <li data-i18n="proc-pack-l1"><span aria-hidden="true">📦</span> Utilisez une boîte de carton rigide, suffisamment grande pour ajouter du rembourrage de tous côtés.</li>
+          <li data-i18n="proc-pack-l2"><span aria-hidden="true">📦</span> Enveloppez chaque composant individuellement dans du papier bulle (au moins 5 cm de protection).</li>
+          <li data-i18n="proc-pack-l3"><span aria-hidden="true">📦</span> Évitez d'enrouler les câbles trop serrés — utilisez des courbes larges pour ne pas fracturer les fils internes.</li>
+          <li data-i18n="proc-pack-l4"><span aria-hidden="true">📦</span> Sécurisez la tête de caméra dans une pochette rigide ou un étui de protection séparé.</li>
+          <li data-i18n="proc-pack-l5"><span aria-hidden="true">📦</span> Remplissez les espaces vides avec du papier froissé ou des flocons de polystyrène.</li>
+          <li data-i18n="proc-pack-l6"><span aria-hidden="true">📦</span> Scellez la boîte avec du ruban adhésif résistant (minimum 3 couches sur toutes les coutures).</li>
+          <li data-i18n="proc-pack-l7"><span aria-hidden="true">📦</span> Apposez clairement nos coordonnées et l'étiquette de livraison sur toutes les faces principales.</li>
+          <li data-i18n="proc-pack-l8"><span aria-hidden="true">📦</span> Conservez votre numéro de suivi de livraison jusqu'à confirmation de réception de notre part.</li>
         </ul>
       </div>
 
       <!-- Location d'équipements -->
       <div class="rental-box fade-in" id="location">
         <div>
-          <h3>📹 Location de caméras disponible</h3>
-          <p>Pendant la durée de réparation de votre équipement, nous proposons la location de caméras d'inspection de remplacement pour que votre activité ne soit pas interrompue. Demandez-nous les disponibilités et tarifs lors de votre appel initial.</p>
+          <h3 data-i18n="proc-loc-h3">📹 Location de caméras disponible</h3>
+          <p data-i18n="proc-loc-p">Pendant la durée de réparation de votre équipement, nous proposons la location de caméras d'inspection de remplacement pour que votre activité ne soit pas interrompue. Demandez-nous les disponibilités et tarifs lors de votre appel initial.</p>
         </div>
         <div>
-          <a href="contact.html" class="btn btn-urgent" aria-label="Demander la disponibilité d'une caméra en location">Demander une location →</a>
+          <a href="contact.html" class="btn btn-urgent" aria-label="Demander la disponibilité d'une caméra en location" data-i18n="proc-loc-btn">Demander une location →</a>
         </div>
       </div>
 
@@ -216,11 +215,11 @@
   <!-- CTA -->
   <section class="cta-section" aria-labelledby="proc-cta">
     <div class="container">
-      <h2 id="proc-cta">Prêt à envoyer votre équipement ?</h2>
-      <p>Contactez-nous d'abord pour valider la réparabilité — c'est gratuit et sans engagement.</p>
+      <h2 id="proc-cta" data-i18n="proc-cta-h2">Prêt à envoyer votre équipement ?</h2>
+      <p data-i18n="proc-cta-p">Contactez-nous d'abord pour valider la réparabilité — c'est gratuit et sans engagement.</p>
       <div class="cta-buttons">
         <a href="tel:4505817009" class="btn btn-phone btn-lg" aria-label="Appeler Access Spec">📞 450-581-7009</a>
-        <a href="contact.html?type=reparabilite"   class="btn btn-outline btn-lg" aria-label="Formulaire de contact">Formulaire de contact →</a>
+        <a href="contact.html?type=reparabilite" class="btn btn-outline btn-lg" aria-label="Formulaire de contact" data-i18n="proc-cta-form">Formulaire de contact →</a>
       </div>
     </div>
   </section>
@@ -232,38 +231,38 @@
     <div class="footer-main">
       <div class="footer-brand">
         <img src="assets/logoAccessSpec.svg" alt="Access Spec Telecommunications Inc." width="160" height="52" loading="lazy">
-        <p>Experts en réparation de caméras d'inspection de drain, caméras robotisées et corrélateurs au Québec depuis plus de 30 ans.</p>
+        <p data-i18n="ft-tagline">Experts en réparation de caméras d'inspection de drain, caméras robotisées et corrélateurs au Québec depuis plus de 30 ans.</p>
         <a href="tel:4505817009" class="footer-phone" aria-label="Appeler Access Spec">📞 450-581-7009</a>
       </div>
       <div class="footer-col">
-        <h4>Navigation</h4>
+        <h4 data-i18n="ft-nav-title">Navigation</h4>
         <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="marques.html">Marques</a></li>
-          <li><a href="procedure.html">Procédure d'envoi</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html"     data-i18n="ft-nav-home">Accueil</a></li>
+          <li><a href="services.html"  data-i18n="ft-nav-services">Services</a></li>
+          <li><a href="marques.html"   data-i18n="ft-nav-brands">Marques</a></li>
+          <li><a href="procedure.html" data-i18n="ft-nav-proc">Procédure d'envoi</a></li>
+          <li><a href="faq.html"       data-i18n="ft-nav-faq">FAQ</a></li>
+          <li><a href="contact.html"   data-i18n="ft-nav-contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
+        <h4 data-i18n="ft-svc-title">Services</h4>
         <ul>
-          <li><a href="services.html">Caméras d'inspection</a></li>
-          <li><a href="services.html#cameras-robotisees">Caméras robotisées</a></li>
-          <li><a href="services.html#localisateurs">Localisateurs radiodétection</a></li>
-          <li><a href="services.html#moniteurs">Moniteurs & écrans</a></li>
-          <li><a href="services.html#enrouleurs">Enrouleurs & dévidoirs</a></li>
-          <li><a href="services.html#electronique">Électronique & accessoires connexes</a></li>
-          <li><a href="procedure.html#location">Location d'équipements</a></li>
+          <li><a href="services.html"                    data-i18n="ft-svc-1">Caméras d'inspection</a></li>
+          <li><a href="services.html#cameras-robotisees" data-i18n="ft-svc-2">Caméras robotisées</a></li>
+          <li><a href="services.html#localisateurs"      data-i18n="ft-svc-3">Localisateurs radiodétection</a></li>
+          <li><a href="services.html#moniteurs"          data-i18n="ft-svc-4">Moniteurs &amp; écrans</a></li>
+          <li><a href="services.html#enrouleurs"         data-i18n="ft-svc-5">Enrouleurs &amp; dévidoirs</a></li>
+          <li><a href="services.html#electronique"       data-i18n="ft-svc-6">Électronique &amp; accessoires connexes</a></li>
+          <li><a href="procedure.html#location"          data-i18n="ft-location">Location d'équipements</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h4 data-i18n="ft-contact-title">Contact</h4>
         <ul>
           <li><a href="tel:4505817009">450-581-7009</a></li>
           <li><a href="mailto:service@accessspec.com">service@accessspec.com</a></li>
-          <li><a href="contact.html">Formulaire de contact</a></li>
+          <li><a href="contact.html" data-i18n="ft-contact-form">Formulaire de contact</a></li>
         </ul>
       </div>
     </div>
@@ -271,8 +270,8 @@
   <div style="border-top: 1px solid rgba(255,255,255,.1);">
     <div class="container">
       <div class="footer-bottom">
-        <span>© 2025 Access Spec Telecommunications Inc. Tous droits réservés.</span>
-        <span>Réparation de caméras d'inspection — Service partout au Québec</span>
+        <span data-i18n="ft-copy">© 2025 Access Spec Telecommunications Inc. Tous droits réservés.</span>
+        <span data-i18n="ft-bottom">Réparation de caméras d'inspection — Service partout au Québec</span>
       </div>
     </div>
   </div>

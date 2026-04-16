@@ -1,4 +1,4 @@
-https://pdionne11.github.io/accessspec-website/index.html<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -22,10 +22,10 @@ https://pdionne11.github.io/accessspec-website/index.html<!DOCTYPE html>
     .faq-section-label {
       font-size: .8125rem; font-weight: 700; text-transform: uppercase;
       letter-spacing: 1px; color: var(--primary); margin: 32px 0 12px;
-      scroll-margin-top: 155px; /* desktop : logo (~90px) + nav (~48px) + marge */
+      scroll-margin-top: 155px;
     }
     @media (max-width: 768px) {
-      .faq-section-label { scroll-margin-top: 85px; } /* mobile : logo seul (~75px) + marge */
+      .faq-section-label { scroll-margin-top: 85px; }
     }
   </style>
 </head>
@@ -50,7 +50,8 @@ https://pdionne11.github.io/accessspec-website/index.html<!DOCTYPE html>
         <li><a href="marques.html"   class="nav-link" data-i18n="nav-marques">Marques</a></li>
         <li><a href="procedure.html" class="nav-link" data-i18n="nav-proc">Procédure</a></li>
         <li><a href="faq.html"       class="nav-link" data-i18n="nav-faq">FAQ</a></li>
-        <li><a href="contact.html"   class="nav-link cta-nav" data-i18n="nav-contact">Obtenir une estimé</a></li>
+        <li><a href="contact.html"   class="nav-link" data-i18n="nav-contact-simple">Contact</a></li>
+        <li><a href="contact.html"   class="nav-link cta-nav" data-i18n="nav-contact">Obtenir un estimé</a></li>
         <li><button class="lang-btn" id="lang-btn" aria-label="Switch to English">EN</button></li>
       </ul>
     </div>
@@ -62,65 +63,63 @@ https://pdionne11.github.io/accessspec-website/index.html<!DOCTYPE html>
   <section class="page-hero">
     <div class="page-hero-content container">
       <nav class="breadcrumb" aria-label="Fil d'Ariane">
-        <a href="index.html">Accueil</a>
+        <a href="index.html" data-i18n="nav-accueil">Accueil</a>
         <span aria-hidden="true">›</span>
-        <span>FAQ</span>
+        <span data-i18n="nav-faq">FAQ</span>
       </nav>
-      <h1>Questions fréquentes</h1>
-      <p>Toutes les réponses à vos questions sur la réparation de caméras d'inspection de drain, robotisées et localisateurs au Québec.</p>
+      <h1 data-i18n="faq-page-h1">Questions fréquentes</h1>
+      <p data-i18n="faq-page-sub">Toutes les réponses à vos questions sur la réparation de caméras d'inspection de drain, robotisées et localisateurs au Québec.</p>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════════════
-       FAQ
-  ══════════════════════════════════════════════════════════════ -->
+  <!-- FAQ -->
   <section class="section">
     <div class="container">
 
       <div class="faq-list" role="list">
 
         <!-- DÉLAIS -->
-        <p class="faq-section-label" id="delais">⏱ Délais &amp; rapidité</p>
+        <p class="faq-section-label" id="delais" data-i18n="faq-lbl-delais">⏱ Délais &amp; rapidité</p>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false">
-            Quels sont les délais de réparation habituels ?
+            <span data-i18n="faq-q1">Quels sont les délais de réparation habituels ?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </button>
-          <div class="faq-a">
+          <div class="faq-a" data-i18n="faq-a1">
             <p>Nos délais standards sont de <strong>10 à 15 jours ouvrables</strong> à compter de la réception de votre appareil et de votre approbation d'un estimé. Ce délai inclut le diagnostic, la réparation et les tests de validation.</p>
-            <p>Service d'urgence disponnible. Des frais supplémentaires s'appliquent pour le service d'urgence. Contactez-nous pour valider la disponibilité.</p>
+            <p>Service d'urgence disponible. Des frais supplémentaires s'appliquent pour le service d'urgence. Contactez-nous pour valider la disponibilité.</p>
           </div>
         </div>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false">
-            Combien de temps dure le diagnostic ?
+            <span data-i18n="faq-q2">Combien de temps dure le diagnostic ?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </button>
-          <div class="faq-a">
+          <div class="faq-a" data-i18n="faq-a2">
             <p>Le diagnostic initial est généralement complété dans les <strong>2 à 3 jours ouvrables</strong> suivant la réception de l'appareil. Vous recevrez alors un rapport complet avec les problèmes identifiés, les pièces nécessaires et le coût total estimé.</p>
             <p>Aucune réparation n'est effectuée sans votre approbation préalable.</p>
           </div>
         </div>
 
         <!-- ENVOI -->
-        <p class="faq-section-label">📦 Envoi &amp; logistique</p>
+        <p class="faq-section-label" data-i18n="faq-lbl-envoi">📦 Envoi &amp; logistique</p>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false">
-            Comment dois-je envoyer mon  appareil?
+            <span data-i18n="faq-q3">Comment dois-je envoyer mon appareil ?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </button>
-          <div class="faq-a">
+          <div class="faq-a" data-i18n="faq-a3">
             <p>Nous recommandons d'utiliser <strong>Purolator</strong> pour les envois depuis partout au Québec, car ce transporteur offre une excellente couverture provinciale. Tout autre transporteur fiable (UPS, FedEx, Postes Canada) est également accepté.</p>
-            <p>Important : <strong>appelez-nous avant d'envoyer</strong> pour confirmer que nous pouvons réparer votre appareil et obtenir notre adresse complète. Consultez notre 
+            <p>Important : <strong>appelez-nous avant d'envoyer</strong> pour confirmer que nous pouvons réparer votre appareil et obtenir notre adresse complète. Consultez notre
               <a href="procedure.html" style="
                   display: inline-flex; align-items: center; gap: 6px;
                   color: var(--white); background: var(--primary);
@@ -135,27 +134,27 @@ https://pdionne11.github.io/accessspec-website/index.html<!DOCTYPE html>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false">
-            Qui paie les frais de transport aller et retour ?
+            <span data-i18n="faq-q4">Qui paie les frais de transport aller et retour ?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </button>
-          <div class="faq-a">
+          <div class="faq-a" data-i18n="faq-a4">
             <p>Les <strong>frais de transport aller et retour sont à la charge du client et vous en êtes responsable</strong>. Vous serez avertis aussitôt que votre appareil est prêt. Soit que vous venez le cherchez ou nous le retournons par le livreur de votre choix à vos frais.</p>
           </div>
         </div>
 
         <!-- COÛTS -->
-        <p class="faq-section-label" id="couts">💰 Coûts &amp; estimé</p>
+        <p class="faq-section-label" id="couts" data-i18n="faq-lbl-couts">💰 Coûts &amp; estimé</p>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false">
-            Quelle est la différence entre l'évaluation de réparabilité et l'estimation officielle du coût ?
+            <span data-i18n="faq-q5">Quelle est la différence entre l'évaluation de réparabilité et l'estimation officielle du coût ?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </button>
-          <div class="faq-a">
+          <div class="faq-a" data-i18n="faq-a5">
             <p>Nous offrons deux types de demandes distincts :</p>
             <p><strong>Évaluation de réparabilité — Gratuite.</strong> C'est la première étape. Sur la base de vos photos et de votre description, nous vous donnons une opinion sommaire : l'appareil semble-t-il réparable ? Est-il raisonnable d'envisager la réparation ? Cette évaluation est offerte sans frais et sans engagement. Et est fortement conseillé avant d'envoyer votre appareil.</p>
             <p><strong>Estimation officielle du coût — Payante.</strong> Si vous avez besoin d'un estimé formel et documenté — pour vos assurances, un dossier d'indemnisation, ou une décision d'achat — nous produisons un rapport officiel après diagnostic complet de l'appareil en atelier. Des frais s'appliquent pour ce service. Contactez-nous pour connaître les tarifs en vigueur.</p>
@@ -164,43 +163,43 @@ https://pdionne11.github.io/accessspec-website/index.html<!DOCTYPE html>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false">
-            Combien coûte une réparation par rapport à l'achat d'un appareil neuf ?
+            <span data-i18n="faq-q6">Combien coûte une réparation par rapport à l'achat d'un appareil neuf ?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </button>
-          <div class="faq-a">
+          <div class="faq-a" data-i18n="faq-a6">
             <p>Chaque situation est unique — c'est pourquoi nous effectuons un diagnostic complet avant de vous donner un prix précis.</p>
           </div>
         </div>
 
         <!-- GARANTIE -->
-        <p class="faq-section-label" id="garantie">🛡 Garantie</p>
+        <p class="faq-section-label" id="garantie" data-i18n="faq-lbl-garantie">🛡 Garantie</p>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false">
-            Quelle est la durée de la garantie sur les réparations ?
+            <span data-i18n="faq-q7">Quelle est la durée de la garantie sur les réparations ?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </button>
-          <div class="faq-a">
+          <div class="faq-a" data-i18n="faq-a7">
             <p>Toutes nos réparations sont couvertes par une <strong>garantie sur la main-d'œuvre et les pièces remplacées</strong>. La durée varie selon le type de réparation effectuée — nous vous précisons la garantie applicable dans votre rapport de réparation.</p>
             <p>Notez que la garantie couvre les défauts liés à notre travail. Elle ne couvre pas les dommages causés par une utilisation inappropriée ou de nouveaux accidents.</p>
           </div>
         </div>
 
         <!-- MARQUES -->
-        <p class="faq-section-label" id="marques">🏷 Marques &amp; appareils</p>
+        <p class="faq-section-label" id="marques" data-i18n="faq-lbl-marques">🏷 Marques &amp; appareils</p>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false">
-            Quelles marques d'appareils pouvez-vous réparer ?
+            <span data-i18n="faq-q8">Quelles marques d'appareils pouvez-vous réparer ?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </button>
-          <div class="faq-a">
+          <div class="faq-a" data-i18n="faq-a8">
             <p>Nous réparons les appareils des principales marques : <strong>Hathorn, RIDGID SeeSnake, Gen-Eye, Milwaukee, General Pipe Cleaners, Rathtech, Pearpoint, ARIES Industries et Envirosight</strong>. Consultez notre <a href="marques.html">page <strong>Marques</strong></a> pour les détails.</p>
             <p>Nous réparons également d'autres marques non listées. Contactez-nous avec la marque et le modèle de votre appareil pour confirmer.</p>
           </div>
@@ -208,12 +207,12 @@ https://pdionne11.github.io/accessspec-website/index.html<!DOCTYPE html>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false">
-            Que se passe-t-il si mon appareil est irréparable ?
+            <span data-i18n="faq-q9">Que se passe-t-il si mon appareil est irréparable ?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </button>
-          <div class="faq-a">
+          <div class="faq-a" data-i18n="faq-a9">
             <p>Si après diagnostic nous concluons que l'appareil est irréparable (pièces introuvables, dommages structurels trop importants), nous vous en informons immédiatement et en toute transparence. Vous aurez les frais d'évaluation et de retour de l'appareil si vous souhaitez le récupérer.</p>
             <p>Dans ce cas, nous pouvons vous orienter vers des sources d'appareils reconditionnés ou neufs.</p>
           </div>
@@ -221,66 +220,66 @@ https://pdionne11.github.io/accessspec-website/index.html<!DOCTYPE html>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false">
-            Réparez-vous aussi les câbles de poussoir séparément ?
+            <span data-i18n="faq-q10">Réparez-vous aussi les câbles de poussoir séparément ?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </button>
-          <div class="faq-a">
+          <div class="faq-a" data-i18n="faq-a10">
             <p>Oui, nous réparons les câbles coaxiaux et les câbles de poussoir séparément de la caméra. Que ce soit pour un remplacement de connecteur, une section endommagée ou un câble entier à refaire, nous pouvons intervenir. Nous fabriquons également des câbles sur mesure selon vos spécifications.</p>
           </div>
         </div>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false">
-            Avez-vous des pièces de rechange en stock ?
+            <span data-i18n="faq-q11">Avez-vous des pièces de rechange en stock ?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </button>
-          <div class="faq-a">
+          <div class="faq-a" data-i18n="faq-a11">
             <p>Nous maintenons un stock de pièces détachées pour les marques et modèles les plus courants (Hathorn, RIDGID, Radiodétection, ARIES, HWM, CUES, Envirosight, MetroTech, etc...), ce qui nous permet de réduire considérablement les délais de réparation. Pour les modèles plus rares ou discontinués, nous pouvons commander les pièces auprès de nos fournisseurs spécialisés, ce qui peut allonger légèrement les délais.</p>
           </div>
         </div>
 
         <!-- TERRITOIRE -->
-        <p class="faq-section-label">📍 Territoire &amp; déplacements</p>
+        <p class="faq-section-label" data-i18n="faq-lbl-territoire">📍 Territoire &amp; déplacements</p>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false">
-            Servez-vous toute la province de Québec ?
+            <span data-i18n="faq-q12">Servez-vous toute la province de Québec ?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </button>
-          <div class="faq-a">
+          <div class="faq-a" data-i18n="faq-a12">
             <p>Oui, nous servons <strong>toute la province de Québec</strong> grâce aux services de transport comme Purolator. Nos clients viennent de Montréal, Laval, Longueuil, Québec, Sherbrooke, Gatineau, Trois-Rivières, Saguenay, Drummondville, Saint-Jérôme, Repentigny, Terrebonne, Brossard, et partout ailleurs dans la province.</p>
           </div>
         </div>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false">
-            Puis-je apporter mon appareil directement en personne ?
+            <span data-i18n="faq-q13">Puis-je apporter mon appareil directement en personne ?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </button>
-          <div class="faq-a">
-            <p>Oui, les visites en personne sont possibles, juste a vous présentez dans les heures d'ouvertures. Veuillez nous appeler au <a href="tel:4505817009" style="color:var(--primary)">450-581-7009</a> ou nous écrire à <a href="mailto:service@accessspec.com" style="color:var(--primary)">service@accessspec.com</a> avant de vous déplacer pour confirmer un créneau.</p>
+          <div class="faq-a" data-i18n="faq-a13">
+            <p>Oui, les visites en personne sont possibles, juste à vous présenter dans les heures d'ouvertures. Veuillez nous appeler au <a href="tel:4505817009" style="color:var(--primary)">450-581-7009</a> ou nous écrire à <a href="mailto:service@accessspec.com" style="color:var(--primary)">service@accessspec.com</a> avant de vous déplacer pour confirmer un créneau.</p>
           </div>
         </div>
 
         <!-- LOCATION -->
-        <p class="faq-section-label" id="location">📹 Location d'appareils</p>
+        <p class="faq-section-label" id="location" data-i18n="faq-lbl-location">📹 Location d'appareils</p>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false">
-            Proposez-vous la location de caméras d'inspection pendant la réparation ?
+            <span data-i18n="faq-q14">Proposez-vous la location de caméras d'inspection pendant la réparation ?</span>
             <svg class="faq-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </button>
-          <div class="faq-a">
+          <div class="faq-a" data-i18n="faq-a14">
             <p>Oui ! Pour que votre activité ne soit pas interrompue pendant la réparation de votre appareil, nous proposons <strong>la location de caméras d'inspection de remplacement</strong>. Disponibilité limitée — contactez-nous lors de votre premier appel pour réserver un appareil de remplacement si nécessaire.</p>
           </div>
         </div>
@@ -288,8 +287,8 @@ https://pdionne11.github.io/accessspec-website/index.html<!DOCTYPE html>
       </div>
 
       <div class="text-center" style="margin-top:48px;">
-        <p style="color:var(--text-light); font-size:1rem; margin-bottom:20px;">Vous n'avez pas trouvé la réponse à votre question ?</p>
-        <a href="contact.html" class="btn btn-primary" aria-label="Contacter Access Spec">Nous contacter directement →</a>
+        <p style="color:var(--text-light); font-size:1rem; margin-bottom:20px;" data-i18n="faq-not-found">Vous n'avez pas trouvé la réponse à votre question ?</p>
+        <a href="contact.html" class="btn btn-primary" aria-label="Contacter Access Spec" data-i18n="faq-contact-btn">Nous contacter directement →</a>
       </div>
 
     </div>
@@ -298,11 +297,11 @@ https://pdionne11.github.io/accessspec-website/index.html<!DOCTYPE html>
   <!-- CTA -->
   <section class="cta-section" aria-labelledby="faq-cta">
     <div class="container">
-      <h2 id="faq-cta">Obtenez votre évaluation gratuite</h2>
-      <p>Un technicien répond à vos questions et évalue votre appareil sans engagement.</p>
+      <h2 id="faq-cta" data-i18n="faq-cta-h2">Obtenez votre évaluation gratuite</h2>
+      <p data-i18n="faq-cta-p">Un technicien répond à vos questions et évalue votre appareil sans engagement.</p>
       <div class="cta-buttons">
         <a href="tel:4505817009" class="btn btn-phone btn-lg" aria-label="Appeler Access Spec">📞 450-581-7009</a>
-        <a href="contact.html"   class="btn btn-outline btn-lg" aria-label="Formulaire de contact">Formulaire de contact →</a>
+        <a href="contact.html"   class="btn btn-outline btn-lg" aria-label="Formulaire de contact" data-i18n="faq-cta-form">Formulaire de contact →</a>
       </div>
     </div>
   </section>
@@ -314,36 +313,36 @@ https://pdionne11.github.io/accessspec-website/index.html<!DOCTYPE html>
     <div class="footer-main">
       <div class="footer-brand">
         <img src="assets/logoAccessSpec.svg" alt="Access Spec Telecommunications Inc." width="160" height="52" loading="lazy">
-        <p>Experts en réparation de caméras d'inspection de drain, caméras robotisées et localisateurs au Québec depuis plus de 30 ans.</p>
+        <p data-i18n="ft-tagline">Experts en réparation de caméras d'inspection de drain, caméras robotisées et localisateurs au Québec depuis plus de 30 ans.</p>
         <a href="tel:4505817009" class="footer-phone" aria-label="Appeler Access Spec">📞 450-581-7009</a>
       </div>
       <div class="footer-col">
-        <h4>Navigation</h4>
+        <h4 data-i18n="ft-nav-title">Navigation</h4>
         <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="marques.html">Marques</a></li>
-          <li><a href="procedure.html">Procédure d'envoi</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html"     data-i18n="ft-nav-home">Accueil</a></li>
+          <li><a href="services.html"  data-i18n="ft-nav-services">Services</a></li>
+          <li><a href="marques.html"   data-i18n="ft-nav-brands">Marques</a></li>
+          <li><a href="procedure.html" data-i18n="ft-nav-proc">Procédure d'envoi</a></li>
+          <li><a href="faq.html"       data-i18n="ft-nav-faq">FAQ</a></li>
+          <li><a href="contact.html"   data-i18n="ft-nav-contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Réponses rapides</h4>
+        <h4 data-i18n="ft-faq-col-title">Réponses rapides</h4>
         <ul>
-          <li><a href="faq.html#delais">Délais de réparation</a></li>
-          <li><a href="faq.html#couts">Coût vs appareil neuf</a></li>
-          <li><a href="faq.html#marques">Marques supportées</a></li>
-          <li><a href="faq.html#garantie">Garantie</a></li>
-          <li><a href="faq.html#location">Location d'appareils</a></li>
+          <li><a href="faq.html#delais"   data-i18n="ft-faq-delais">Délais de réparation</a></li>
+          <li><a href="faq.html#couts"    data-i18n="ft-faq-couts">Coût vs appareil neuf</a></li>
+          <li><a href="faq.html#marques"  data-i18n="ft-faq-marques">Marques supportées</a></li>
+          <li><a href="faq.html#garantie" data-i18n="ft-faq-garantie">Garantie</a></li>
+          <li><a href="faq.html#location" data-i18n="ft-faq-location">Location d'appareils</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h4 data-i18n="ft-contact-title">Contact</h4>
         <ul>
           <li><a href="tel:4505817009">450-581-7009</a></li>
           <li><a href="mailto:service@accessspec.com">service@accessspec.com</a></li>
-          <li><a href="contact.html">Formulaire de contact</a></li>
+          <li><a href="contact.html" data-i18n="ft-contact-form">Formulaire de contact</a></li>
         </ul>
       </div>
     </div>
@@ -351,8 +350,8 @@ https://pdionne11.github.io/accessspec-website/index.html<!DOCTYPE html>
   <div style="border-top: 1px solid rgba(255,255,255,.1);">
     <div class="container">
       <div class="footer-bottom">
-        <span>© 2025 Access Spec Telecommunications Inc. Tous droits réservés.</span>
-        <span>Réparation de caméras d'inspection — Service partout au Québec</span>
+        <span data-i18n="ft-copy">© 2025 Access Spec Telecommunications Inc. Tous droits réservés.</span>
+        <span data-i18n="ft-bottom">Réparation de caméras d'inspection — Service partout au Québec</span>
       </div>
     </div>
   </div>

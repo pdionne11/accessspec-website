@@ -13,12 +13,10 @@
 </head>
 <body>
 
-<!-- FLOATING PHONE (mobile) -->
 <a href="tel:4505817009" class="floating-phone" aria-label="Appeler Access Spec au 450-581-7009">
   📞 450-581-7009
 </a>
 
-<!-- HEADER -->
 <header class="site-header" id="site-header">
   <div class="header-logo-wrap">
     <a href="index.html" aria-label="Accueil Access Spec Telecommunications">
@@ -31,41 +29,42 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-menu" id="nav-menu" role="list">
-        <li><a href="index.html"     class="nav-link">Accueil</a></li>
-        <li><a href="services.html"  class="nav-link">Services</a></li>
-        <li><a href="marques.html"   class="nav-link">Marques</a></li>
-        <li><a href="procedure.html" class="nav-link">Procédure</a></li>
-        <li><a href="faq.html"       class="nav-link">FAQ</a></li>
-        <li><a href="contact.html"   class="nav-link cta-nav">Obtenir un estimé</a></li>
+        <li><a href="index.html"     class="nav-link" data-i18n="nav-accueil">Accueil</a></li>
+        <li><a href="services.html"  class="nav-link" data-i18n="nav-services">Services</a></li>
+        <li><a href="marques.html"   class="nav-link" data-i18n="nav-marques">Marques</a></li>
+        <li><a href="procedure.html" class="nav-link" data-i18n="nav-proc">Procédure</a></li>
+        <li><a href="faq.html"       class="nav-link" data-i18n="nav-faq">FAQ</a></li>
+        <li><a href="contact.html"   class="nav-link" data-i18n="nav-contact-simple">Contact</a></li>
+        <li><a href="contact.html"   class="nav-link cta-nav" data-i18n="nav-contact">Obtenir un estimé</a></li>
+        <li><button class="lang-btn" id="lang-btn" aria-label="Switch to English">EN</button></li>
       </ul>
     </div>
   </div>
 </header>
 
-<!-- MAIN -->
 <main style="padding: 60px 0 80px;">
   <div class="container" style="max-width: 860px;">
-    <h1 style="margin-bottom: 8px;">Plan du site</h1>
-    <p style="color: var(--text-muted, #666); margin-bottom: 48px;">Toutes les pages du site Access Spec Telecommunications.</p>
+    <h1 style="margin-bottom: 8px;" data-i18n="sm-h1">Plan du site</h1>
+    <p style="color: var(--text-muted, #666); margin-bottom: 48px;" data-i18n="sm-sub">Toutes les pages du site Access Spec Telecommunications.</p>
 
     <div style="display: grid; gap: 40px;">
 
       <section>
-        <h2 style="font-size: 1.1rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 16px; color: var(--accent, #e87722);">Pages principales</h2>
+        <h2 style="font-size: 1.1rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 16px; color: var(--accent, #e87722);" data-i18n="sm-main-h2">Pages principales</h2>
         <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 10px;">
-          <li><a href="index.html" style="font-weight: 600;">Accueil</a> — Présentation d'Access Spec et de nos services de réparation</li>
-          <li><a href="services.html" style="font-weight: 600;">Services</a> — Caméras d'inspection, robotisées, corrélateurs, câbles et localisateurs</li>
-          <li><a href="marques.html" style="font-weight: 600;">Marques</a> — Toutes les marques réparées (RIDGID, Hathorn, Gen-Eye, CUES, Rausch…)</li>
-          <li><a href="procedure.html" style="font-weight: 600;">Procédure d'envoi</a> — Comment nous expédier votre équipement pour réparation</li>
-          <li><a href="faq.html" style="font-weight: 600;">FAQ</a> — Questions fréquentes sur nos services et délais</li>
-          <li><a href="contact.html" style="font-weight: 600;">Contact / Estimé</a> — Formulaire de demande d'estimé et coordonnées</li>
+          <li><a href="index.html" style="font-weight: 600;" data-i18n="sm-home">Accueil</a><span data-i18n="sm-home-desc"> — Présentation d'Access Spec et de nos services de réparation</span></li>
+          <li><a href="services.html" style="font-weight: 600;" data-i18n="sm-svc">Services</a><span data-i18n="sm-svc-desc"> — Caméras d'inspection, robotisées, corrélateurs, câbles et localisateurs</span></li>
+          <li><a href="marques.html" style="font-weight: 600;" data-i18n="sm-brands">Marques</a><span data-i18n="sm-brands-desc"> — Toutes les marques réparées (RIDGID, Hathorn, Gen-Eye, CUES, Rausch…)</span></li>
+          <li><a href="procedure.html" style="font-weight: 600;" data-i18n="sm-proc">Procédure d'envoi</a><span data-i18n="sm-proc-desc"> — Comment nous expédier votre équipement pour réparation</span></li>
+          <li><a href="faq.html" style="font-weight: 600;" data-i18n="sm-faq">FAQ</a><span data-i18n="sm-faq-desc"> — Questions fréquentes sur nos services et délais</span></li>
+          <li><a href="contact.html" style="font-weight: 600;" data-i18n="sm-contact">Contact / Estimé</a><span data-i18n="sm-contact-desc"> — Formulaire de demande d'estimé et coordonnées</span></li>
         </ul>
       </section>
 
       <section>
-        <h2 style="font-size: 1.1rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 16px; color: var(--accent, #e87722);">Ressources</h2>
+        <h2 style="font-size: 1.1rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 16px; color: var(--accent, #e87722);" data-i18n="sm-res-h2">Ressources</h2>
         <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 10px;">
-          <li><a href="sitemap.xml">Plan du site XML</a> — Fichier sitemap pour les moteurs de recherche</li>
+          <li><a href="sitemap.xml" data-i18n="sm-xml">Plan du site XML</a><span data-i18n="sm-xml-desc"> — Fichier sitemap pour les moteurs de recherche</span></li>
         </ul>
       </section>
 
@@ -73,44 +72,43 @@
   </div>
 </main>
 
-<!-- FOOTER -->
 <footer class="site-footer" role="contentinfo">
   <div class="container">
     <div class="footer-main">
       <div class="footer-brand">
         <img src="assets/logoAccessSpec.svg" alt="Access Spec Telecommunications Inc." width="160" height="52" loading="lazy">
-        <p>Experts en réparation de caméras d'inspection de drain, caméras robotisées et localisateurs au Québec depuis plus de 30 ans.</p>
+        <p data-i18n="ft-tagline">Experts en réparation de caméras d'inspection de drain, caméras robotisées et localisateurs au Québec depuis plus de 30 ans.</p>
         <a href="tel:4505817009" class="footer-phone" aria-label="Appeler Access Spec au 450-581-7009">📞 450-581-7009</a>
       </div>
       <div class="footer-col">
-        <h4>Navigation</h4>
+        <h4 data-i18n="ft-nav-title">Navigation</h4>
         <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="marques.html">Marques</a></li>
-          <li><a href="procedure.html">Procédure d'envoi</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html"     data-i18n="ft-nav-home">Accueil</a></li>
+          <li><a href="services.html"  data-i18n="ft-nav-services">Services</a></li>
+          <li><a href="marques.html"   data-i18n="ft-nav-brands">Marques</a></li>
+          <li><a href="procedure.html" data-i18n="ft-nav-proc">Procédure d'envoi</a></li>
+          <li><a href="faq.html"       data-i18n="ft-nav-faq">FAQ</a></li>
+          <li><a href="contact.html"   data-i18n="ft-nav-contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
+        <h4 data-i18n="ft-svc-title">Services</h4>
         <ul>
-          <li><a href="services.html">Caméras d'inspection</a></li>
-          <li><a href="services.html">Caméras robotisées</a></li>
-          <li><a href="services.html">corrélateurs</a></li>
-          <li><a href="services.html">Câbles &amp; poussoirs</a></li>
-          <li><a href="services.html">Moniteurs &amp; enrouleurs</a></li>
-          <li><a href="procedure.html">Location d'équipements</a></li>
+          <li><a href="services.html"  data-i18n="ft-svc-1">Caméras d'inspection</a></li>
+          <li><a href="services.html"  data-i18n="ft-svc-2">Caméras robotisées</a></li>
+          <li><a href="services.html"  data-i18n="ft-svc-3">Localisateurs radiodétection</a></li>
+          <li><a href="services.html"  data-i18n="ft-svc-5">Enrouleurs &amp; dévidoirs</a></li>
+          <li><a href="services.html"  data-i18n="ft-svc-4">Moniteurs &amp; écrans</a></li>
+          <li><a href="procedure.html" data-i18n="ft-location">Location d'équipements</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h4 data-i18n="ft-contact-title">Contact</h4>
         <ul>
           <li><a href="tel:4505817009">450-581-7009</a></li>
           <li><a href="mailto:service@accessspec.com">service@accessspec.com</a></li>
-          <li><a href="contact.html">Formulaire de contact</a></li>
-          <li><a href="sitemap.html">Plan du site</a></li>
+          <li><a href="contact.html"   data-i18n="ft-contact-form">Formulaire de contact</a></li>
+          <li><a href="sitemap.html"   data-i18n="ft-sitemap">Plan du site</a></li>
         </ul>
       </div>
     </div>
@@ -118,8 +116,8 @@
   <div style="border-top: 1px solid rgba(255,255,255,.1);">
     <div class="container">
       <div class="footer-bottom">
-        <span>© 2025 Access Spec Telecommunications Inc. Tous droits réservés.</span>
-        <span>Réparation de caméras d'inspection — Service partout au Québec</span>
+        <span data-i18n="ft-copy">© 2025 Access Spec Telecommunications Inc. Tous droits réservés.</span>
+        <span data-i18n="ft-bottom">Réparation de caméras d'inspection — Service partout au Québec</span>
       </div>
     </div>
   </div>

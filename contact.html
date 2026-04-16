@@ -68,44 +68,42 @@
   <section class="page-hero">
     <div class="page-hero-content container">
       <nav class="breadcrumb" aria-label="Fil d'Ariane">
-        <a href="index.html">Accueil</a>
+        <a href="index.html" data-i18n="nav-accueil">Accueil</a>
         <span aria-hidden="true">›</span>
-        <span>Contact</span>
+        <span data-i18n="nav-contact-simple">Contact</span>
       </nav>
-      <h1>Contactez-nous</h1>
-      <p>Choisissez votre type de demande, décrivez votre appareil — nous vous réponderons rapidement.</p>
+      <h1 data-i18n="ct-page-h1">Contactez-nous</h1>
+      <p data-i18n="ct-page-sub">Choisissez votre type de demande, décrivez votre appareil — nous vous réponderons rapidement.</p>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════════════
-       CONTACT LAYOUT
-  ══════════════════════════════════════════════════════════════ -->
+  <!-- CONTACT LAYOUT -->
   <section class="section">
     <div class="container">
       <div class="contact-layout">
 
         <!-- FORMULAIRE -->
         <div class="contact-form fade-in">
-          <h2>Demande de service</h2>
-          <p class="form-subtitle">Remplissez le formulaire ci-dessous. Votre application de courriel s'ouvrira avec toutes les informations préremplies.</p>
+          <h2 data-i18n="ct-form-h2">Demande de service</h2>
+          <p class="form-subtitle" data-i18n="ct-form-sub">Remplissez le formulaire ci-dessous. Votre application de courriel s'ouvrira avec toutes les informations préremplies.</p>
 
-          <div class="form-note" role="note">
+          <div class="form-note" role="note" data-i18n="ct-form-note">
             📎 <strong>lors de l'envoie du couriel</strong>, Ajoutez vos photos de l'appareil. Les photos aident grandement notre diagnostic initial.
           </div>
 
           <form id="contact-form" novalidate>
 
-            <p class="selector-label">Type de demande <span aria-hidden="true" style="color:var(--cta-phone)">*</span></p>
+            <p class="selector-label"><span data-i18n="ct-type-label">Type de demande</span> <span aria-hidden="true" style="color:var(--cta-phone)">*</span></p>
             <div class="type-options" role="radiogroup" aria-label="Type de demande">
 
               <label class="type-option" for="type-reparabilite">
                 <input type="radio" id="type-reparabilite" name="type_demande" value="reparabilite" checked>
                 <div class="type-option-content">
                   <div class="type-option-header">
-                    <span class="type-option-title">Évaluation de réparabilité</span>
-                    <span class="type-badge type-badge-free">Gratuit</span>
+                    <span class="type-option-title" data-i18n="ct-type-rep-title">Évaluation de réparabilité</span>
+                    <span class="type-badge type-badge-free" data-i18n="ct-type-rep-badge">Gratuit</span>
                   </div>
-                  <p class="type-option-desc">Je veux savoir si mon appareil peut être réparé avant de m'engager.</p>
+                  <p class="type-option-desc" data-i18n="ct-type-rep-desc">Je veux savoir si mon appareil peut être réparé avant de m'engager.</p>
                 </div>
               </label>
 
@@ -113,11 +111,11 @@
                 <input type="radio" id="type-estimation" name="type_demande" value="estimation">
                 <div class="type-option-content">
                   <div class="type-option-header">
-                    <span class="type-option-title">Estimation officielle du coût</span>
-                    <span class="type-badge type-badge-paid">Payant</span>
+                    <span class="type-option-title" data-i18n="ct-type-est-title">Estimation officielle du coût</span>
+                    <span class="type-badge type-badge-paid" data-i18n="ct-type-est-badge">Payant</span>
                   </div>
-                  <p class="type-option-desc">J'ai besoin d'un estimé formel et documenté (assurances, dossier, etc.).</p>
-                  <p class="type-option-note">Nous contacter pour les tarifs.</p>
+                  <p class="type-option-desc" data-i18n="ct-type-est-desc">J'ai besoin d'un estimé formel et documenté (assurances, dossier, etc.).</p>
+                  <p class="type-option-note" data-i18n="ct-type-est-note">Nous contacter pour les tarifs.</p>
                 </div>
               </label>
 
@@ -125,54 +123,54 @@
 
             <div class="form-row">
               <div class="form-group">
-                <label for="prenom">Prénom <span aria-hidden="true" style="color:var(--cta-phone)">*</span></label>
-                <input type="text" id="prenom" name="prenom" placeholder="Jean-François" required autocomplete="given-name">
+                <label for="prenom"><span data-i18n="ct-lbl-prenom">Prénom</span> <span aria-hidden="true" style="color:var(--cta-phone)">*</span></label>
+                <input type="text" id="prenom" name="prenom" placeholder="Jean-François" required autocomplete="given-name" data-i18n-placeholder="ct-ph-prenom">
               </div>
               <div class="form-group">
-                <label for="nom">Nom <span aria-hidden="true" style="color:var(--cta-phone)">*</span></label>
-                <input type="text" id="nom" name="nom" placeholder="Tremblay" required autocomplete="family-name">
+                <label for="nom"><span data-i18n="ct-lbl-nom">Nom</span> <span aria-hidden="true" style="color:var(--cta-phone)">*</span></label>
+                <input type="text" id="nom" name="nom" placeholder="Tremblay" required autocomplete="family-name" data-i18n-placeholder="ct-ph-nom">
               </div>
             </div>
 
             <div class="form-group">
-              <label for="entreprise">Nom de l'entreprise</label>
-              <input type="text" id="entreprise" name="entreprise" placeholder="Plomberie Tremblay inc." autocomplete="organization">
+              <label for="entreprise" data-i18n="ct-lbl-co">Nom de l'entreprise</label>
+              <input type="text" id="entreprise" name="entreprise" placeholder="Plomberie Tremblay inc." autocomplete="organization" data-i18n-placeholder="ct-ph-co">
             </div>
 
             <div class="form-row">
               <div class="form-group">
-                <label for="telephone">Téléphone <span aria-hidden="true" style="color:var(--cta-phone)">*</span></label>
-                <input type="tel" id="telephone" name="telephone" placeholder="450-555-0000" required autocomplete="tel">
+                <label for="telephone"><span data-i18n="ct-lbl-tel">Téléphone</span> <span aria-hidden="true" style="color:var(--cta-phone)">*</span></label>
+                <input type="tel" id="telephone" name="telephone" placeholder="450-555-0000" required autocomplete="tel" data-i18n-placeholder="ct-ph-tel">
               </div>
               <div class="form-group">
-                <label for="email">Courriel <span aria-hidden="true" style="color:var(--cta-phone)">*</span></label>
-                <input type="email" id="email" name="email" placeholder="vous@exemple.com" required autocomplete="email">
+                <label for="email"><span data-i18n="ct-lbl-email">Courriel</span> <span aria-hidden="true" style="color:var(--cta-phone)">*</span></label>
+                <input type="email" id="email" name="email" placeholder="vous@exemple.com" required autocomplete="email" data-i18n-placeholder="ct-ph-email">
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
-                <label for="type_appareil">Type d'appareil <span aria-hidden="true" style="color:var(--cta-phone)">*</span></label>
+                <label for="type_appareil"><span data-i18n="ct-lbl-type">Type d'appareil</span> <span aria-hidden="true" style="color:var(--cta-phone)">*</span></label>
                 <select id="type_appareil" name="type_appareil" required>
-                  <option value="" disabled selected>— Choisir un type —</option>
-                  <option value="Caméra d'inspection de drain">Caméra d'inspection de drain</option>
-                  <option value="Caméra robotisée">Caméra robotisée</option>
-                  <option value="Localisateur de cable">Localisateur de cable</option>
-                  <option value="Câble / Poussoir">Câble / Poussoir</option>
-                  <option value="Moniteur / Écran">Moniteur / Écran</option>
-                  <option value="Enrouleur / Dévidoir">Enrouleur / Dévidoir</option>
-                   <option value="Localisateur de métal">Localisateur de métal</option>
-                    <option value="Corrélateur de fuite d'eau">Corrélateur de fuite d'eau</option>
-                     <option value="Instrument d'écoute au sol">Instrument d'écoute au sol</option>
-                      <option value="Enrouleur / Dévidoir">clampe d'induction</option>
-                      <option value="Enrouleur / Dévidoir">multimètre</option>
-                  <option value="Autre appareil">Autre appareil</option>
+                  <option value="" disabled selected data-i18n="ct-opt-default-type">— Choisir un type —</option>
+                  <option value="Caméra d'inspection de drain" data-i18n="ct-opt-t1">Caméra d'inspection de drain</option>
+                  <option value="Caméra robotisée"             data-i18n="ct-opt-t2">Caméra robotisée</option>
+                  <option value="Localisateur de cable"        data-i18n="ct-opt-t3">Localisateur de cable</option>
+                  <option value="Câble / Poussoir"             data-i18n="ct-opt-t4">Câble / Poussoir</option>
+                  <option value="Moniteur / Écran"             data-i18n="ct-opt-t5">Moniteur / Écran</option>
+                  <option value="Enrouleur / Dévidoir"         data-i18n="ct-opt-t6">Enrouleur / Dévidoir</option>
+                  <option value="Localisateur de métal"        data-i18n="ct-opt-t7">Localisateur de métal</option>
+                  <option value="Corrélateur de fuite d'eau"   data-i18n="ct-opt-t8">Corrélateur de fuite d'eau</option>
+                  <option value="Instrument d'écoute au sol"   data-i18n="ct-opt-t9">Instrument d'écoute au sol</option>
+                  <option value="Clampe d'induction"           data-i18n="ct-opt-t10">Clampe d'induction</option>
+                  <option value="Multimètre"                   data-i18n="ct-opt-t11">Multimètre</option>
+                  <option value="Autre appareil"               data-i18n="ct-opt-t12">Autre appareil</option>
                 </select>
               </div>
               <div class="form-group">
-                <label for="marque">Marque <span aria-hidden="true" style="color:var(--cta-phone)">*</span></label>
+                <label for="marque"><span data-i18n="ct-lbl-brand">Marque</span> <span aria-hidden="true" style="color:var(--cta-phone)">*</span></label>
                 <select id="marque" name="marque" required>
-                  <option value="" disabled selected>— Choisir une marque —</option>
+                  <option value="" disabled selected data-i18n="ct-opt-default-brand">— Choisir une marque —</option>
                   <option value="Hathorn">Hathorn</option>
                   <option value="Gen-Eye (General Pipe Cleaners)">Gen-Eye (General Pipe Cleaners)</option>
                   <option value="RIDGID / SeeSnake">RIDGID / SeeSnake</option>
@@ -189,22 +187,23 @@
                   <option value="RIDGID">RIDGID</option>
                   <option value="CST-BURGER">CST-BURGER</option>
                   <option value="CST-BURGER">FLUKE</option>
-                  <option value="Autre marque">Autre marque</option>
+                  <option value="Autre marque" data-i18n="ct-opt-brand-other">Autre marque</option>
                 </select>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="description">Description du problème <span aria-hidden="true" style="color:var(--cta-phone)">*</span></label>
+              <label for="description"><span data-i18n="ct-lbl-desc">Description du problème</span> <span aria-hidden="true" style="color:var(--cta-phone)">*</span></label>
               <textarea id="description" name="description" rows="5" required
-                placeholder="Décrivez le problème observé : symptômes, depuis quand, circonstances de la panne, numéro de modèle si connu..."></textarea>
+                placeholder="Décrivez le problème observé : symptômes, depuis quand, circonstances de la panne, numéro de modèle si connu..."
+                data-i18n-placeholder="ct-ph-desc"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;" aria-label="Envoyer la demande par courriel">
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;" aria-label="Envoyer la demande par courriel" data-i18n="ct-btn-send">
               📧 Envoyer la demande
             </button>
 
-            <p style="color:var(--text-light); font-size:.8125rem; text-align:center; margin-top:12px;">
+            <p style="color:var(--text-light); font-size:.8125rem; text-align:center; margin-top:12px;" data-i18n="ct-send-note">
               Votre application de messagerie s'ouvrira avec le message prérempli adressé à service@accessspec.com. A ce moment, Ajoutez vos photos et envoyez.
             </p>
 
@@ -215,48 +214,48 @@
         <div class="contact-info fade-in">
 
           <div class="contact-info-card">
-            <h3>📞 Nous joindre</h3>
+            <h3 data-i18n="ct-info-h3">📞 Nous joindre</h3>
             <div class="ci-item">
               <span class="ci-icon" aria-hidden="true">📞</span>
               <div class="ci-text">
-                <strong>Téléphone</strong>
+                <strong data-i18n="ct-info-tel">Téléphone</strong>
                 <a href="tel:4505817009">450-581-7009</a>
               </div>
             </div>
             <div class="ci-item">
               <span class="ci-icon" aria-hidden="true">✉️</span>
               <div class="ci-text">
-                <strong>Courriel</strong>
+                <strong data-i18n="ct-info-email">Courriel</strong>
                 <a href="mailto:service@accessspec.com">service@accessspec.com</a>
               </div>
             </div>
             <div class="ci-item">
               <span class="ci-icon" aria-hidden="true">📍</span>
               <div class="ci-text">
-                <strong>Adresse</strong>
+                <strong data-i18n="ct-info-addr">Adresse</strong>
                 <span>328C, rue Saint-Paul<br>Repentigny, QC J5Z 4H9</span>
               </div>
             </div>
             <div class="ci-item">
               <span class="ci-icon" aria-hidden="true">🕐</span>
               <div class="ci-text">
-                <strong>Heures d'ouverture</strong>
-                <span>Lundi – Vendredi, 8h00 – 17h00</span>
+                <strong data-i18n="ct-info-hours-label">Heures d'ouverture</strong>
+                <span data-i18n="ct-info-hours">Lundi – Vendredi, 8h00 – 17h00</span>
               </div>
             </div>
           </div>
 
           <div class="contact-info-card">
-            <h3>⚡ Service d'urgence</h3>
-            <p style="color:var(--text-light); font-size:.9375rem; margin-bottom:16px;">Pour les situations urgentes nécessitant une réparation rapide, appelez-nous directement.</p>
+            <h3 data-i18n="ct-urgent-h3">⚡ Service d'urgence</h3>
+            <p style="color:var(--text-light); font-size:.9375rem; margin-bottom:16px;" data-i18n="ct-urgent-p">Pour les situations urgentes nécessitant une réparation rapide, appelez-nous directement.</p>
             <a href="tel:4505817009" class="btn btn-phone" style="width:100%; justify-content:center;" aria-label="Appeler pour service urgent">
               📞 450-581-7009
             </a>
           </div>
 
           <div class="contact-info-card">
-            <h3>📍 Zone de service</h3>
-            <p style="color:var(--text-light); font-size:.9375rem;">Nous servons toute la province de Québec par envoi postal (Purolator recommandé) :</p>
+            <h3 data-i18n="ct-zone-h3">📍 Zone de service</h3>
+            <p style="color:var(--text-light); font-size:.9375rem;" data-i18n="ct-zone-p">Nous servons toute la province de Québec par envoi postal (Purolator recommandé) :</p>
             <div style="margin-top:12px; display:flex; flex-wrap:wrap; gap:6px;">
               <span style="background:var(--light-gray); padding:4px 10px; border-radius:var(--radius-full); font-size:.8125rem; color:var(--secondary);">Montréal</span>
               <span style="background:var(--light-gray); padding:4px 10px; border-radius:var(--radius-full); font-size:.8125rem; color:var(--secondary);">Laval</span>
@@ -267,7 +266,7 @@
               <span style="background:var(--light-gray); padding:4px 10px; border-radius:var(--radius-full); font-size:.8125rem; color:var(--secondary);">Trois-Rivières</span>
               <span style="background:var(--light-gray); padding:4px 10px; border-radius:var(--radius-full); font-size:.8125rem; color:var(--secondary);">Saguenay</span>
               <span style="background:var(--light-gray); padding:4px 10px; border-radius:var(--radius-full); font-size:.8125rem; color:var(--secondary);">Repentigny</span>
-              <span style="background:var(--light-gray); padding:4px 10px; border-radius:var(--radius-full); font-size:.8125rem; color:var(--secondary);">+ toute la province</span>
+              <span style="background:var(--light-gray); padding:4px 10px; border-radius:var(--radius-full); font-size:.8125rem; color:var(--secondary);" data-i18n="ct-zone-more">+ toute la province</span>
             </div>
           </div>
 
@@ -277,7 +276,7 @@
       <!-- CARTE GOOGLE MAPS -->
       <div style="margin-top:56px;">
         <div class="section-title fade-in">
-          <h2>Notre localisation</h2>
+          <h2 data-i18n="ct-map-h2">Notre localisation</h2>
           <p>328C, rue Saint-Paul, Repentigny, QC J5Z 4H9</p>
           <span class="accent-bar"></span>
         </div>
@@ -293,7 +292,7 @@
             aria-label="Carte — 328C rue Saint-Paul, Repentigny, Québec">
           </iframe>
         </div>
-        <p style="text-align:center; color:var(--text-light); font-size:.9rem; margin-top:10px;">
+        <p style="text-align:center; color:var(--text-light); font-size:.9rem; margin-top:10px;" data-i18n="ct-map-note">
           Visites sur rendez-vous uniquement. Expédition partout au Québec via Purolator. —
           <a href="https://www.google.com/maps/search/?api=1&query=328C+rue+Saint-Paul+Repentigny+QC+J5Z+4H9" target="_blank" rel="noopener" style="color:var(--primary);">Voir sur Google Maps →</a>
         </p>
@@ -309,38 +308,38 @@
     <div class="footer-main">
       <div class="footer-brand">
         <img src="assets/logoAccessSpec.svg" alt="Access Spec Telecommunications Inc." width="160" height="52" loading="lazy">
-        <p>Experts en réparation de caméras d'inspection de drain, caméras robotisées et localisateurs au Québec depuis plus de 30 ans.</p>
+        <p data-i18n="ft-tagline">Experts en réparation de caméras d'inspection de drain, caméras robotisées et localisateurs au Québec depuis plus de 30 ans.</p>
         <a href="tel:4505817009" class="footer-phone" aria-label="Appeler Access Spec">📞 450-581-7009</a>
       </div>
       <div class="footer-col">
-        <h4>Navigation</h4>
+        <h4 data-i18n="ft-nav-title">Navigation</h4>
         <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="marques.html">Marques</a></li>
-          <li><a href="procedure.html">Procédure d'envoi</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html"     data-i18n="ft-nav-home">Accueil</a></li>
+          <li><a href="services.html"  data-i18n="ft-nav-services">Services</a></li>
+          <li><a href="marques.html"   data-i18n="ft-nav-brands">Marques</a></li>
+          <li><a href="procedure.html" data-i18n="ft-nav-proc">Procédure d'envoi</a></li>
+          <li><a href="faq.html"       data-i18n="ft-nav-faq">FAQ</a></li>
+          <li><a href="contact.html"   data-i18n="ft-nav-contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
+        <h4 data-i18n="ft-svc-title">Services</h4>
         <ul>
-          <li><a href="services.html">Caméras d'inspection</a></li>
-          <li><a href="services.html#cameras-robotisees">Caméras robotisées</a></li>
-          <li><a href="services.html#localisateurs">Localisateurs radiodétection</a></li>
-          <li><a href="services.html#moniteurs">Moniteurs & écrans</a></li>
-          <li><a href="services.html#enrouleurs">Enrouleurs & dévidoirs</a></li>
-          <li><a href="services.html#electronique">Électronique & accessoires connexes</a></li>
-          <li><a href="procedure.html#location">Location d'équipements</a></li>
+          <li><a href="services.html"                    data-i18n="ft-svc-1">Caméras d'inspection</a></li>
+          <li><a href="services.html#cameras-robotisees" data-i18n="ft-svc-2">Caméras robotisées</a></li>
+          <li><a href="services.html#localisateurs"      data-i18n="ft-svc-3">Localisateurs radiodétection</a></li>
+          <li><a href="services.html#moniteurs"          data-i18n="ft-svc-4">Moniteurs &amp; écrans</a></li>
+          <li><a href="services.html#enrouleurs"         data-i18n="ft-svc-5">Enrouleurs &amp; dévidoirs</a></li>
+          <li><a href="services.html#electronique"       data-i18n="ft-svc-6">Électronique &amp; accessoires connexes</a></li>
+          <li><a href="procedure.html#location"          data-i18n="ft-location">Location d'équipements</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact direct</h4>
+        <h4 data-i18n="ft-contact-direct-title">Contact direct</h4>
         <ul>
           <li><a href="tel:4505817009">450-581-7009</a></li>
           <li><a href="mailto:service@accessspec.com">service@accessspec.com</a></li>
-          <li><a href="sitemap.html">Plan du site</a></li>
+          <li><a href="sitemap.html" data-i18n="ft-sitemap">Plan du site</a></li>
         </ul>
       </div>
     </div>
@@ -348,8 +347,8 @@
   <div style="border-top: 1px solid rgba(255,255,255,.1);">
     <div class="container">
       <div class="footer-bottom">
-        <span>© 2025 Access Spec Telecommunications Inc. Tous droits réservés.</span>
-        <span>Réparation de caméras d'inspection — Service partout au Québec</span>
+        <span data-i18n="ft-copy">© 2025 Access Spec Telecommunications Inc. Tous droits réservés.</span>
+        <span data-i18n="ft-bottom">Réparation de caméras d'inspection — Service partout au Québec</span>
       </div>
     </div>
   </div>
