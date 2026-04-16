@@ -251,6 +251,7 @@ const I18N = {
     'nav-marques':  'Marques',
     'nav-proc':     'Procédure',
     'nav-faq':      'FAQ',
+    'nav-contact-simple': 'Contact',
     'nav-contact':  'Obtenir un devis',
     // Hero
     'hero-badge':   'Service partout au Québec',
@@ -280,6 +281,7 @@ const I18N = {
     'nav-marques':  'Brands',
     'nav-proc':     'Process',
     'nav-faq':      'FAQ',
+    'nav-contact-simple': 'Contact',
     'nav-contact':  'Get a Quote',
     'hero-badge':   'Service across all of Québec',
     'hero-h1':      'Inspection Camera Repair<br> — <span class="hero-h1-accent">Québec Experts</span>',
