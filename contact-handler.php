@@ -90,7 +90,7 @@ if (!empty($_FILES['attachment']['name'][0])) {
 }
 
 // ── EN-TÊTES & CORPS MIME ──────────────────────────────────────
-$entetes  = "From: Site Web Access Spec <noreply@accessspec.com>\r\n";
+$entetes  = "From: Site Web Access Spec <access.spec@hotmail.com>\r\n";
 $entetes .= "Reply-To: {$prenom} {$nom} <{$email}>\r\n";
 $entetes .= "MIME-Version: 1.0\r\n";
 $entetes .= "Content-Type: multipart/mixed; boundary=\"{$boundary}\"\r\n";

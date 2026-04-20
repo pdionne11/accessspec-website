@@ -230,7 +230,7 @@ function initContactForm() {
 
     try {
       const data = new FormData(form);
-      const res  = await fetch('send-mail.php', {
+      const res  = await fetch('contact-handler.php', {
         method: 'POST',
         body: data
       });
