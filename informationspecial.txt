@@ -1,0 +1,10 @@
+utilisation de web3form
+avec une cle generé a partir info@accessspec.com
+
+Allez sur web3forms.com
+Entrez info@accessspec.com → cliquez Get Access Key
+Le client reçoit un courriel à info@accessspec.com → il clique le lien de confirmation
+Vous récupérez la clé (format xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)
+Dans contact.html, remplacez VOTRE-CLE-ICI par cette clé (ligne ~105)
+
+

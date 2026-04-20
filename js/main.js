@@ -189,9 +189,10 @@ function initFAQ() {
   });
 }
 
-/* ── CONTACT FORM → MAILTO ──────────────────────────────────── */
+/* ── CONTACT FORM → WEB3FORMS ───────────────────────────────── */
 function initContactForm() {
-  const form = $('#contact-form');
+  const form   = $('#contact-form');
+  const status = $('#form-status');
   if (!form) return;
 
   // Pré-cocher selon le paramètre URL (?type=estimation ou ?type=reparabilite)
@@ -204,41 +205,71 @@ function initContactForm() {
     if (radio) radio.checked = true;
   }
 
-  form.addEventListener('submit', e => {
+  // Afficher les noms de fichiers sélectionnés
+  const fileInput = form.querySelector('#photos');
+  const fileNames = $('#file-names');
+  if (fileInput && fileNames) {
+    fileInput.addEventListener('change', () => {
+      const files = [...fileInput.files];
+      fileNames.textContent = files.length
+        ? files.map(f => f.name).join(', ')
+        : '';
+    });
+  }
+
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    const v  = name => (form.querySelector(`[name="${name}"]`)?.value || '').trim();
-    const prenom    = v('prenom');
-    const nom       = v('nom');
-    const entreprise= v('entreprise') || 'N/A';
-    const telephone = v('telephone');
-    const email     = v('email');
-    const type      = v('type_appareil');
-    const marque    = v('marque');
-    const desc      = v('description');
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'fr';
+    const btn  = form.querySelector('[type="submit"]');
+    const originalHTML = btn.innerHTML;
 
-    const typeDemande = form.querySelector('[name="type_demande"]:checked')?.value || 'reparabilite';
-    const typeLabel   = typeDemande === 'estimation'
-      ? 'Estimation officielle du coût'
-      : 'Évaluation de réparabilité';
+    // Bouton — état envoi
+    btn.disabled = true;
+    btn.innerHTML = lang === 'en' ? '⏳ Sending…' : '⏳ Envoi en cours…';
+    if (status) { status.style.display = 'none'; status.className = 'form-status'; }
 
-    const subject = encodeURIComponent(`[${typeLabel}] ${type} ${marque}`);
-    const body    = encodeURIComponent(
-      `Bonjour,\n\n` +
-      `Type de demande : ${typeLabel}\n\n` +
-      `─── COORDONNÉES ───\n` +
-      `Nom : ${prenom} ${nom}\n` +
-      `Entreprise : ${entreprise}\n` +
-      `Téléphone : ${telephone}\n` +
-      `Courriel : ${email}\n\n` +
-      `─── ÉQUIPEMENT ───\n` +
-      `Type : ${type}\n` +
-      `Marque : ${marque}\n\n` +
-      `─── DESCRIPTION ───\n` +
-      `${desc}\n\n` +
-      `NOTE : Veuillez ajouter vos photos dans ce courriel.\n\n` +
-      `Merci,\n${prenom} ${nom}`
-    );
-    window.location.href = `mailto:service@accessspec.com?subject=${subject}&body=${body}`;
+    try {
+      const data = new FormData(form);
+      const res  = await fetch('send-mail.php', {
+        method: 'POST',
+        body: data
+      });
+      const json = await res.json();
+
+      if (json.success) {
+        // Succès
+        btn.innerHTML = lang === 'en' ? '✅ Message sent!' : '✅ Message envoyé !';
+        btn.style.background = 'var(--primary)';
+        if (status) {
+          status.className = 'form-status form-status--success';
+          status.innerHTML = lang === 'en'
+            ? '✅ Your message has been sent. We will get back to you shortly.'
+            : '✅ Votre message a bien été envoyé. Nous vous répondrons dans les meilleurs délais.';
+          status.style.display = 'block';
+        }
+        form.reset();
+      } else {
+        throw new Error(json.message || 'Error');
+      }
+    } catch {
+      // Erreur
+      btn.innerHTML = lang === 'en' ? '❌ Error — please retry' : '❌ Erreur — réessayez';
+      btn.style.background = 'var(--cta-urgent)';
+      if (status) {
+        status.className = 'form-status form-status--error';
+        status.innerHTML = lang === 'en'
+          ? '❌ Sending failed. Please try again or call <a href="tel:4505817009">450-581-7009</a>.'
+          : '❌ Échec de l\'envoi. Veuillez réessayer ou appeler le <a href="tel:4505817009">450-581-7009</a>.';
+        status.style.display = 'block';
+      }
+    } finally {
+      // Rétablir le bouton après 5 s
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.innerHTML = originalHTML;
+        btn.style.background = '';
+      }, 5000);
+    }
   });
 }
 
@@ -477,7 +508,7 @@ const I18N = {
     'proc-steps-h2': "Les 6 étapes de réparation",
     'proc-steps-sub':"Suivez ce processus pour une expérience fluide et sans surprise.",
     'proc-s1-h3': "📞 Appelez-nous ou envoyez un courriel",
-    'proc-s1-p':  "Contactez-nous au <a href=\"tel:4505817009\" style=\"color:var(--primary)\">450-581-7009</a> ou à <a href=\"mailto:service@accessspec.com\" style=\"color:var(--primary)\">service@accessspec.com</a> pour nous décrire le problème. Ayez en main :",
+    'proc-s1-p':  "Contactez-nous au <a href=\"tel:4505817009\" style=\"color:var(--primary)\">450-581-7009</a> ou à <a href=\"mailto:access.spec@hotmail.com\" style=\"color:var(--primary)\">access.spec@hotmail.com</a> pour nous décrire le problème. Ayez en main :",
     'proc-s1-l1': "La marque et le modèle de l'équipement",
     'proc-s1-l2': "Une description précise du problème observé",
     'proc-s1-l3': "Des photos si possible (aidez-nous à évaluer)",
@@ -558,7 +589,7 @@ const I18N = {
     'faq-q12': "Servez-vous toute la province de Québec ?",
     'faq-a12': "<p>Oui, nous servons <strong>toute la province de Québec</strong> grâce aux services de transport comme Purolator. Nos clients viennent de Montréal, Laval, Longueuil, Québec, Sherbrooke, Gatineau, Trois-Rivières, Saguenay, Drummondville, Saint-Jérôme, Repentigny, Terrebonne, Brossard, et partout ailleurs dans la province.</p>",
     'faq-q13': "Puis-je apporter mon appareil directement en personne ?",
-    'faq-a13': "<p>Oui, les visites en personne sont possibles, juste à vous présenter dans les heures d'ouvertures. Veuillez nous appeler au <a href=\"tel:4505817009\" style=\"color:var(--primary)\">450-581-7009</a> ou nous écrire à <a href=\"mailto:service@accessspec.com\" style=\"color:var(--primary)\">service@accessspec.com</a> avant de vous déplacer pour confirmer un créneau.</p>",
+    'faq-a13': "<p>Oui, les visites en personne sont possibles, juste à vous présenter dans les heures d'ouvertures. Veuillez nous appeler au <a href=\"tel:4505817009\" style=\"color:var(--primary)\">450-581-7009</a> ou nous écrire à <a href=\"mailto:access.spec@hotmail.com\" style=\"color:var(--primary)\">access.spec@hotmail.com</a> avant de vous déplacer pour confirmer un créneau.</p>",
     'faq-q14': "Proposez-vous la location de caméras d'inspection pendant la réparation ?",
     'faq-a14': "<p>Oui ! Pour que votre activité ne soit pas interrompue pendant la réparation de votre appareil, nous proposons <strong>la location de caméras d'inspection de remplacement</strong>. Disponibilité limitée — contactez-nous lors de votre premier appel pour réserver un appareil de remplacement si nécessaire.</p>",
     'faq-not-found': "Vous n'avez pas trouvé la réponse à votre question ?",
@@ -570,8 +601,10 @@ const I18N = {
     'ct-page-h1':  "Contactez-nous",
     'ct-page-sub': "Choisissez votre type de demande, décrivez votre appareil — nous vous réponderons rapidement.",
     'ct-form-h2':  "Demande de service",
-    'ct-form-sub': "Remplissez le formulaire ci-dessous. Votre application de courriel s'ouvrira avec toutes les informations préremplies.",
-    'ct-form-note':"📎 <strong>lors de l'envoie du couriel</strong>, Ajoutez vos photos de l'appareil. Les photos aident grandement notre diagnostic initial.",
+    'ct-form-sub': "Remplissez le formulaire ci-dessous et joignez vos photos — le message sera envoyé directement à notre équipe.",
+    'ct-form-note':"📸 <strong>Ajoutez des photos de l'appareil</strong> (optionnel). Les photos aident grandement notre diagnostic initial.",
+    'ct-lbl-photos':"Photos de l'appareil (optionnel)",
+    'ct-photos-hint':"JPG, PNG — max 5 fichiers, 5 Mo chacun",
     'ct-type-label':"Type de demande",
     'ct-type-rep-title':"Évaluation de réparabilité",
     'ct-type-rep-badge':"Gratuit",
@@ -589,7 +622,7 @@ const I18N = {
     'ct-lbl-brand':"Marque",
     'ct-lbl-desc': "Description du problème",
     'ct-btn-send': "📧 Envoyer la demande",
-    'ct-send-note':"Votre application de messagerie s'ouvrira avec le message prérempli adressé à service@accessspec.com. A ce moment, Ajoutez vos photos et envoyez.",
+    'ct-send-note':"Le message sera envoyé directement à access.spec@hotmail.com sans ouvrir votre application courriel.",
     'ct-info-h3':  "📞 Nous joindre",
     'ct-info-tel': "Téléphone",
     'ct-info-email':"Courriel",
@@ -881,7 +914,7 @@ const I18N = {
     'proc-steps-h2': 'The 6 Repair Steps',
     'proc-steps-sub':'Follow this process for a smooth, hassle-free experience.',
     'proc-s1-h3': '📞 Call us or send an email',
-    'proc-s1-p':  'Contact us at <a href="tel:4505817009" style="color:var(--primary)">450-581-7009</a> or at <a href="mailto:service@accessspec.com" style="color:var(--primary)">service@accessspec.com</a> to describe the problem. Have on hand:',
+    'proc-s1-p':  'Contact us at <a href="tel:4505817009" style="color:var(--primary)">450-581-7009</a> or at <a href="mailto:access.spec@hotmail.com" style="color:var(--primary)">access.spec@hotmail.com</a> to describe the problem. Have on hand:',
     'proc-s1-l1': 'The brand and model of the equipment',
     'proc-s1-l2': 'A precise description of the problem observed',
     'proc-s1-l3': 'Photos if possible (help us evaluate)',
@@ -962,7 +995,7 @@ const I18N = {
     'faq-q12': 'Do you serve the entire province of Québec?',
     'faq-a12': '<p>Yes, we serve <strong>the entire province of Québec</strong> through transport services like Purolator. Our clients come from Montréal, Laval, Longueuil, Québec City, Sherbrooke, Gatineau, Trois-Rivières, Saguenay, Drummondville, Saint-Jérôme, Repentigny, Terrebonne, Brossard, and everywhere else in the province.</p>',
     'faq-q13': 'Can I bring my device in person?',
-    'faq-a13': '<p>Yes, in-person visits are possible during business hours. Please call us at <a href="tel:4505817009" style="color:var(--primary)">450-581-7009</a> or write to us at <a href="mailto:service@accessspec.com" style="color:var(--primary)">service@accessspec.com</a> before coming to confirm a time slot.</p>',
+    'faq-a13': '<p>Yes, in-person visits are possible during business hours. Please call us at <a href="tel:4505817009" style="color:var(--primary)">450-581-7009</a> or write to us at <a href="mailto:access.spec@hotmail.com" style="color:var(--primary)">access.spec@hotmail.com</a> before coming to confirm a time slot.</p>',
     'faq-q14': 'Do you offer inspection camera rental during repairs?',
     'faq-a14': '<p>Yes! To keep your operations running during the repair of your device, we offer <strong>rental of replacement inspection cameras</strong>. Limited availability — contact us during your first call to reserve a replacement device if needed.</p>',
     'faq-not-found': "Didn't find the answer to your question?",
@@ -974,8 +1007,10 @@ const I18N = {
     'ct-page-h1':  'Contact us',
     'ct-page-sub': 'Choose your request type, describe your device — we will respond promptly.',
     'ct-form-h2':  'Service request',
-    'ct-form-sub': 'Fill out the form below. Your email application will open with all information pre-filled.',
-    'ct-form-note':'📎 <strong>when sending the email</strong>, add photos of your device. Photos greatly help our initial diagnostic.',
+    'ct-form-sub': 'Fill out the form below and attach your photos — the message will be sent directly to our team.',
+    'ct-form-note':'📸 <strong>Add photos of your device</strong> (optional). Photos greatly help our initial diagnostic.',
+    'ct-lbl-photos':'Device photos (optional)',
+    'ct-photos-hint':'JPG, PNG — max 5 files, 5 MB each',
     'ct-type-label':'Request type',
     'ct-type-rep-title':'Repairability assessment',
     'ct-type-rep-badge':'Free',
@@ -993,7 +1028,7 @@ const I18N = {
     'ct-lbl-brand':'Brand',
     'ct-lbl-desc': 'Problem description',
     'ct-btn-send': '📧 Send request',
-    'ct-send-note':'Your email application will open with the pre-filled message addressed to service@accessspec.com. At that point, add your photos and send.',
+    'ct-send-note':'The message will be sent directly to access.spec@hotmail.com without opening your email application.',
     'ct-info-h3':  '📞 Reach us',
     'ct-info-tel': 'Phone',
     'ct-info-email':'Email',
