@@ -1,7 +1,7 @@
 <?php
 /**
  * Access Spec Telecommunications — Formulaire de contact
- * Envoie les données du formulaire + photos jointes à access.spec@hotmail.com
+ * Envoie les données du formulaire + photos jointes à info@accessspec.com
  */
 
 header('Content-Type: application/json; charset=UTF-8');
@@ -49,7 +49,7 @@ $type_label = $type_dem === 'estimation'
     ? 'Estimation officielle du coût'
     : 'Évaluation de réparabilité';
 
-$destinataire = 'access.spec@hotmail.com';
+$destinataire = 'info@accessspec.com';
 $sujet        = '=?UTF-8?B?' . base64_encode("[{$type_label}] {$type_app} — {$marque}") . '?=';
 
 $corps  = "Type de demande : {$type_label}\r\n\r\n";
@@ -90,7 +90,7 @@ if (!empty($_FILES['attachment']['name'][0])) {
 }
 
 // ── EN-TÊTES & CORPS MIME ──────────────────────────────────────
-$entetes  = "From: Site Web Access Spec <access.spec@hotmail.com>\r\n";
+$entetes  = "From: Site Web Access Spec <info@accessspec.com>\r\n";
 $entetes .= "Reply-To: {$prenom} {$nom} <{$email}>\r\n";
 $entetes .= "MIME-Version: 1.0\r\n";
 $entetes .= "Content-Type: multipart/mixed; boundary=\"{$boundary}\"\r\n";

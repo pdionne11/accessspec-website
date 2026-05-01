@@ -4,10 +4,10 @@
  * Accéder à : https://votre-site.com/test-mail.php
  */
 $ok = mail(
-    'access.spec@hotmail.com',
+    'info@accessspec.com',
     'Test envoi Access Spec',
     'Si vous recevez ce message, mail() fonctionne sur ce serveur.',
-    "From: access.spec@hotmail.com\r\nContent-Type: text/plain; charset=UTF-8"
+    "From: info@accessspec.com\r\nContent-Type: text/plain; charset=UTF-8"
 );
 
 echo $ok
