@@ -248,6 +248,7 @@ function initContactForm() {
           status.style.display = 'block';
         }
         form.reset();
+        if (fileNames) fileNames.textContent = '';
       } else {
         throw new Error(json.message || 'Error');
       }

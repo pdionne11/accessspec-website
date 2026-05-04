@@ -6,6 +6,22 @@
 
 header('Content-Type: application/json; charset=UTF-8');
 
+// Mode test GET — ouvrir contact-handler.php?test=1 dans le navigateur
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['test'])) {
+    $ok  = mail('info@accessspec.com', 'Test formulaire Access Spec', 'Test envoi OK', 'From: info@accessspec.com');
+    $err = error_get_last();
+    echo json_encode([
+        'test'              => true,
+        'success'           => $ok,
+        'error'             => $err['message'] ?? null,
+        'file_uploads'      => ini_get('file_uploads'),
+        'upload_max_filesize' => ini_get('upload_max_filesize'),
+        'post_max_size'     => ini_get('post_max_size'),
+        'upload_tmp_dir'    => ini_get('upload_tmp_dir'),
+    ]);
+    exit;
+}
+
 // Refus des requêtes non-POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -111,9 +127,11 @@ foreach ($pieces as $p) {
 $message .= "--{$boundary}--";
 
 // ── ENVOI ──────────────────────────────────────────────────────
-if (@mail($destinataire, $sujet, $message, $entetes)) {
-    echo json_encode(['success' => true]);
+$ok = mail($destinataire, $sujet, $message, $entetes);
+if ($ok) {
+    echo json_encode(['success' => true, 'fichiers' => count($pieces)]);
 } else {
+    $err = error_get_last();
     http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'Erreur serveur. Veuillez appeler le 450-581-7009.']);
+    echo json_encode(['success' => false, 'message' => 'Erreur mail: ' . ($err['message'] ?? 'inconnue')]);
 }
