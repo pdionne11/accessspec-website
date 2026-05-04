@@ -86,20 +86,29 @@ $types_ok   = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/heic
 $taille_max = 5 * 1024 * 1024; // 5 Mo par fichier
 $pieces     = [];
 
+$debug_files = [];
 if (!empty($_FILES['attachment']['name'][0])) {
     $fichiers = $_FILES['attachment'];
     $nb = count($fichiers['name']);
 
     for ($i = 0; $i < $nb; $i++) {
-        if ($fichiers['error'][$i] !== UPLOAD_ERR_OK) continue;
-        if ($fichiers['size'][$i]  >  $taille_max)    continue;
+        $err  = $fichiers['error'][$i];
+        $size = $fichiers['size'][$i];
+        $mime = function_exists('mime_content_type') ? mime_content_type($fichiers['tmp_name'][$i]) : $fichiers['type'][$i];
+        $ext  = strtolower(pathinfo($fichiers['name'][$i], PATHINFO_EXTENSION));
 
-        $type_mime = mime_content_type($fichiers['tmp_name'][$i]);
-        if (!in_array($type_mime, $types_ok, true)) continue;
+        $debug_files[] = ['name' => $fichiers['name'][$i], 'error' => $err, 'size' => $size, 'mime' => $mime, 'ext' => $ext];
+
+        if ($err !== UPLOAD_ERR_OK) continue;
+        if ($size > $taille_max)    continue;
+
+        // Validation par extension en plus du MIME (plus fiable sur certains serveurs)
+        $exts_ok = ['jpg','jpeg','png','gif','webp','heic','heif'];
+        if (!in_array($mime, $types_ok, true) && !in_array($ext, $exts_ok, true)) continue;
 
         $pieces[] = [
             'nom'     => basename($fichiers['name'][$i]),
-            'type'    => $type_mime,
+            'type'    => $mime ?: 'image/jpeg',
             'contenu' => chunk_split(base64_encode(file_get_contents($fichiers['tmp_name'][$i]))),
         ];
     }
@@ -129,7 +138,7 @@ $message .= "--{$boundary}--";
 // ── ENVOI ──────────────────────────────────────────────────────
 $ok = mail($destinataire, $sujet, $message, $entetes);
 if ($ok) {
-    echo json_encode(['success' => true, 'fichiers' => count($pieces)]);
+    echo json_encode(['success' => true, 'fichiers' => count($pieces), 'debug' => $debug_files]);
 } else {
     $err = error_get_last();
     http_response_code(500);
