@@ -248,7 +248,7 @@ function initContactForm() {
           status.style.display = 'block';
         }
         form.reset();
-        if (fileNames) fileNames.textContent = '';
+        document.getElementById('file-names').textContent = '';
       } else {
         throw new Error(json.message || 'Error');
       }
