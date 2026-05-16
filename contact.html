@@ -21,12 +21,12 @@
     .form-status a { color: inherit; font-weight: 600; }
     /* === CHAMP PHOTO === */
     .file-drop {
-      border: 2px dashed var(--border); border-radius: var(--radius);
+      border: 2px dashed var(--vert-principal); border-radius: var(--radius);
       padding: 20px 16px; text-align: center; cursor: pointer;
       transition: border-color var(--transition-fast), background var(--transition-fast);
-      background: var(--off-white);
+      background: var(--vert-pale);
     }
-    .file-drop:hover, .file-drop:focus-within { border-color: var(--primary); background: rgba(15,118,110,.04); }
+    .file-drop:hover, .file-drop:focus-within { border-color: var(--vert-fonce); background: rgba(0,140,0,.06); }
     .file-drop input[type="file"] { display: none; }
     .file-drop-label { display: flex; flex-direction: column; align-items: center; gap: 6px; cursor: pointer; }
     .file-drop-icon  { font-size: 2rem; line-height: 1; }
@@ -44,7 +44,7 @@
       background: var(--white);
     }
     .type-option:hover { border-color: var(--primary-light); background: var(--off-white); }
-    .type-option:has(input:checked) { border-color: var(--primary); background: rgba(15,118,110,.05); }
+    .type-option:has(input:checked) { border-color: var(--primary); background: rgba(0,140,0,.05); }
     .type-option input[type="radio"] { margin-top: 3px; accent-color: var(--primary); width: 18px; height: 18px; flex-shrink: 0; }
     .type-option-content { flex: 1; }
     .type-option-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
@@ -54,6 +54,53 @@
     .type-badge-paid { background: #FEF3C7; color: #92400E; }
     .type-option-desc { font-size: .875rem; color: var(--text-light); margin: 0; }
     .type-option-note { font-size: .8125rem; color: var(--text-light); font-style: italic; margin: 4px 0 0; }
+    /* ===== CHAMPS DU FORMULAIRE — thème vert ===== */
+    .contact-form .form-group input,
+    .contact-form .form-group select,
+    .contact-form .form-group textarea {
+      border: 2px solid var(--vert-bordure);
+      background-color: var(--vert-pale);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .contact-form .form-group input:focus,
+    .contact-form .form-group select:focus,
+    .contact-form .form-group textarea:focus {
+      border-color: var(--vert-principal);
+      background-color: #ffffff;
+      box-shadow: 0 0 0 3px rgba(0,140,0,.18);
+    }
+    /* ===== CARTES INFO CONTACT — thème vert ===== */
+    .contact-info-card {
+      background-color: var(--vert-pale);
+      border: 2px solid var(--vert-moyen);
+      border-left: 5px solid var(--vert-principal);
+    }
+    /* ===== BOUTON ENVOYER — thème vert ===== */
+    #contact-form .btn-primary {
+      background-color: var(--vert-principal);
+      border-color: var(--vert-principal);
+    }
+    #contact-form .btn-primary:hover {
+      background-color: var(--vert-fonce);
+      border-color: var(--vert-fonce);
+      transform: translateY(-1px);
+    }
+    /* ===== BOÎTE DEMANDE DE SERVICE — thème vert ===== */
+    .contact-form {
+      background-color: var(--vert-pale);
+      border: 2px solid var(--vert-moyen);
+      border-left: 5px solid var(--vert-principal);
+    }
+    /* ===== NOTE FORMULAIRE — thème vert ===== */
+    .form-note {
+      background: rgba(0,140,0,.08);
+      border-left: 4px solid var(--vert-principal);
+    }
+    /* ===== CARTES TYPE DE DEMANDE — thème vert ===== */
+    .type-option:hover { border-color: var(--vert-bordure); background: var(--vert-pale); }
+    .type-option:has(input:checked) { border-color: var(--vert-principal); background: rgba(0,140,0,.06); }
+    .type-option input[type="radio"] { accent-color: var(--vert-principal); }
   </style>
 </head>
 <body>
@@ -87,7 +134,7 @@
 
 <main>
 
-  <section class="page-hero">
+  <section class="page-hero" style="padding: 28px 0 20px;">
     <div class="page-hero-content container">
       <nav class="breadcrumb" aria-label="Fil d'Ariane">
         <a href="index.html" data-i18n="nav-accueil">Accueil</a>
@@ -100,12 +147,12 @@
   </section>
 
   <!-- CONTACT LAYOUT -->
-  <section class="section">
+  <section class="section" style="padding-top: 28px;">
     <div class="container">
       <div class="contact-layout">
 
         <!-- FORMULAIRE -->
-        <div class="contact-form fade-in">
+        <div class="contact-form">
           <h2 data-i18n="ct-form-h2">Demande de service</h2>
           <p class="form-subtitle" data-i18n="ct-form-sub">Remplissez le formulaire ci-dessous. Votre application de courriel s'ouvrira avec toutes les informations préremplies.</p>
 
@@ -260,13 +307,13 @@
                 <a href="tel:4505817009">450-581-7009</a>
               </div>
             </div>
-            <!--<div class="ci-item">
+            <div class="ci-item">
               <span class="ci-icon" aria-hidden="true">✉️</span>
               <div class="ci-text">
                 <strong data-i18n="ct-info-email">Courriel</strong>
                 <a href="mailto:info@accessspec.com">info@accessspec.com</a>
               </div>
-            </div>-->
+            </div>
             <div class="ci-item">
               <span class="ci-icon" aria-hidden="true">📍</span>
               <div class="ci-text">
@@ -376,7 +423,7 @@
         <h4 data-i18n="ft-contact-direct-title">Contact direct</h4>
         <ul>
           <li><a href="tel:4505817009">450-581-7009</a></li>
-          <!--<li><a href="mailto:info@accessspec.com">info@accessspec.com</a></li>-->
+          <li><a href="contact.html" data-i18n="ft-contact-form">Formulaire de contact</a></li>
           <li><a href="sitemap.html" data-i18n="ft-sitemap">Plan du site</a></li>
         </ul>
       </div>
