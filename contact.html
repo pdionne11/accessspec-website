@@ -101,6 +101,18 @@
     .type-option:hover { border-color: var(--vert-bordure); background: var(--vert-pale); }
     .type-option:has(input:checked) { border-color: var(--vert-principal); background: rgba(0,140,0,.06); }
     .type-option input[type="radio"] { accent-color: var(--vert-principal); }
+    /* ===== PLACEHOLDER CARTE ===== */
+    .map-placeholder {
+      width: 100%; height: 420px; border-radius: var(--radius-lg);
+      background: var(--vert-pale); border: 2px solid var(--vert-moyen);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .map-placeholder-inner { text-align: center; padding: 24px; }
+    .map-placeholder-icon { font-size: 3rem; line-height: 1; margin-bottom: 12px; }
+    .map-placeholder-addr { font-size: .9375rem; color: var(--secondary); font-weight: 600; margin-bottom: 6px; }
+    .map-placeholder-city { font-size: .875rem; color: var(--text-light); margin-bottom: 24px; }
+    .map-placeholder-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .map-placeholder iframe { border-radius: var(--radius-lg); }
   </style>
 </head>
 <body>
@@ -354,21 +366,20 @@
           <p>328C, rue Saint-Paul, Repentigny, QC J5Z 4H9</p>
           <span class="accent-bar"></span>
         </div>
-        <div class="map-wrap fade-in">
-          <iframe
-            src="https://maps.google.com/maps?q=328C+rue+Saint-Paul,+Repentigny,+QC+J5Z+4H9,+Canada&output=embed&z=17"
-            width="100%"
-            height="420"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            title="Access Spec Telecommunications — 328C rue Saint-Paul, Repentigny, QC"
-            aria-label="Carte — 328C rue Saint-Paul, Repentigny, Québec">
-          </iframe>
+        <div class="map-placeholder" id="map-placeholder">
+          <div class="map-placeholder-inner">
+            <div class="map-placeholder-icon">📍</div>
+            <p class="map-placeholder-addr">328C, rue Saint-Paul</p>
+            <p class="map-placeholder-city">Repentigny, QC J5Z 4H9</p>
+            <div class="map-placeholder-actions">
+              <button class="btn btn-primary" id="map-load-btn" data-i18n="ct-map-load">Afficher la carte</button>
+              <a href="https://www.google.com/maps/search/?api=1&query=328C+rue+Saint-Paul+Repentigny+QC+J5Z+4H9"
+                 target="_blank" rel="noopener" class="btn btn-outline-primary" data-i18n="ct-map-ext">Ouvrir dans Google Maps →</a>
+            </div>
+          </div>
         </div>
         <p style="text-align:center; color:var(--text-light); font-size:.9rem; margin-top:10px;" data-i18n="ct-map-note">
-          Visites sur rendez-vous uniquement. Expédition partout au Québec via Purolator. —
-          <a href="https://www.google.com/maps/search/?api=1&query=328C+rue+Saint-Paul+Repentigny+QC+J5Z+4H9" target="_blank" rel="noopener" style="color:var(--primary);">Voir sur Google Maps →</a>
+          Visites sur rendez-vous uniquement. Expédition partout au Québec via Purolator.
         </p>
       </div>
 

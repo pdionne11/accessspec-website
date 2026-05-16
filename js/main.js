@@ -636,7 +636,9 @@ const I18N = {
     'ct-zone-p':   "Nous servons toute la province de Québec par envoi postal (Purolator recommandé) :",
     'ct-zone-more':"+ toute la province",
     'ct-map-h2':   "Notre localisation",
-    'ct-map-note': "Visites sur rendez-vous uniquement. Expédition partout au Québec via Purolator. — <a href=\"https://www.google.com/maps/search/?api=1&query=328C+rue+Saint-Paul+Repentigny+QC+J5Z+4H9\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--primary);\">Voir sur Google Maps →</a>",
+    'ct-map-load': "Afficher la carte",
+    'ct-map-ext':  "Ouvrir dans Google Maps →",
+    'ct-map-note': "Visites sur rendez-vous uniquement. Expédition partout au Québec via Purolator.",
     // Sitemap page
     'sm-h1':       "Plan du site",
     'sm-sub':      "Toutes les pages du site Access Spec Telecommunications.",
@@ -1042,7 +1044,9 @@ const I18N = {
     'ct-zone-p':   'We serve the entire province of Québec by mail (Purolator recommended):',
     'ct-zone-more':'+ entire province',
     'ct-map-h2':   'Our location',
-    'ct-map-note': 'Visits by appointment only. Shipping throughout Québec via Purolator. — <a href="https://www.google.com/maps/search/?api=1&query=328C+rue+Saint-Paul+Repentigny+QC+J5Z+4H9" target="_blank" rel="noopener" style="color:var(--primary);">View on Google Maps →</a>',
+    'ct-map-load': 'Show map',
+    'ct-map-ext':  'Open in Google Maps →',
+    'ct-map-note': 'Visits by appointment only. Shipping throughout Québec via Purolator.',
     // Sitemap page
     'sm-h1':       'Site Map',
     'sm-sub':      'All pages of the Access Spec Telecommunications website.',
@@ -1125,6 +1129,27 @@ function initLangSwitch() {
   btn.addEventListener('click', () => applyLang(document.documentElement.lang === 'fr' ? 'en' : 'fr'));
 }
 
+/* ── CARTE SUR DEMANDE ──────────────────────────────────────── */
+function initMapPlaceholder() {
+  const btn = document.getElementById('map-load-btn');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    const placeholder = document.getElementById('map-placeholder');
+    if (!placeholder) return;
+    const wrap = document.createElement('div');
+    wrap.style.cssText = 'width:100%;border-radius:16px;overflow:hidden;';
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://maps.google.com/maps?q=328C+rue+Saint-Paul,+Repentigny,+QC+J5Z+4H9,+Canada&output=embed&z=17';
+    iframe.width = '100%';
+    iframe.height = '420';
+    iframe.style.border = '0';
+    iframe.allowFullscreen = true;
+    iframe.title = 'Access Spec Telecommunications — 328C rue Saint-Paul, Repentigny, QC';
+    wrap.appendChild(iframe);
+    placeholder.replaceWith(wrap);
+  });
+}
+
 /* ── BOOT ───────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   initHamburger();
@@ -1137,4 +1162,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initFAQ();
   initContactForm();
   initLangSwitch();
+  initMapPlaceholder();
 });
