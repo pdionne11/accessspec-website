@@ -10,6 +10,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    function chargerCarte() {
+      var p = document.getElementById('map-placeholder');
+      if (!p) return;
+      var w = document.createElement('div');
+      w.style.cssText = 'width:100%;border-radius:16px;overflow:hidden;';
+      var f = document.createElement('iframe');
+      f.src = 'https://maps.google.com/maps?q=328C+rue+Saint-Paul,+Repentigny,+QC+J5Z+4H9,+Canada&output=embed&z=17';
+      f.width = '100%'; f.height = '420'; f.style.border = '0'; f.allowFullscreen = true;
+      f.title = 'Access Spec Telecommunications — 328C rue Saint-Paul, Repentigny, QC';
+      w.appendChild(f);
+      p.replaceWith(w);
+    }
+  </script>
   <style>
     /* === STATUT FORMULAIRE === */
     .form-status {
@@ -372,7 +386,7 @@
             <p class="map-placeholder-addr">328C, rue Saint-Paul</p>
             <p class="map-placeholder-city">Repentigny, QC J5Z 4H9</p>
             <div class="map-placeholder-actions">
-              <button class="btn btn-primary" id="map-load-btn" data-i18n="ct-map-load">Afficher la carte</button>
+              <button class="btn btn-primary" id="map-load-btn" onclick="chargerCarte()" data-i18n="ct-map-load">Afficher la carte</button>
               <a href="https://www.google.com/maps/search/?api=1&query=328C+rue+Saint-Paul+Repentigny+QC+J5Z+4H9"
                  target="_blank" rel="noopener" class="btn btn-outline-primary" data-i18n="ct-map-ext">Ouvrir dans Google Maps →</a>
             </div>

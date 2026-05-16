@@ -1129,27 +1129,6 @@ function initLangSwitch() {
   btn.addEventListener('click', () => applyLang(document.documentElement.lang === 'fr' ? 'en' : 'fr'));
 }
 
-/* ── CARTE SUR DEMANDE ──────────────────────────────────────── */
-function initMapPlaceholder() {
-  const btn = document.getElementById('map-load-btn');
-  if (!btn) return;
-  btn.addEventListener('click', function () {
-    const placeholder = document.getElementById('map-placeholder');
-    if (!placeholder) return;
-    const wrap = document.createElement('div');
-    wrap.style.cssText = 'width:100%;border-radius:16px;overflow:hidden;';
-    const iframe = document.createElement('iframe');
-    iframe.src = 'https://maps.google.com/maps?q=328C+rue+Saint-Paul,+Repentigny,+QC+J5Z+4H9,+Canada&output=embed&z=17';
-    iframe.width = '100%';
-    iframe.height = '420';
-    iframe.style.border = '0';
-    iframe.allowFullscreen = true;
-    iframe.title = 'Access Spec Telecommunications — 328C rue Saint-Paul, Repentigny, QC';
-    wrap.appendChild(iframe);
-    placeholder.replaceWith(wrap);
-  });
-}
-
 /* ── BOOT ───────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   initHamburger();
@@ -1162,5 +1141,4 @@ document.addEventListener('DOMContentLoaded', () => {
   initFAQ();
   initContactForm();
   initLangSwitch();
-  initMapPlaceholder();
 });
